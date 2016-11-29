@@ -1,10 +1,10 @@
 html body{
   background-color: #D7D7D7;
-  margin :0% 0%;
+  margin : 0% 0%;
   margin-right: 0%;
   margin-left: 0%;
-  max-width:100%;
-
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #header{
@@ -105,7 +105,6 @@ html body{
 	padding: 10px;
 	width: 320px;
 }
-
 
 #search .searchbox #searchb:focus {
 	border-color: #aaa;
