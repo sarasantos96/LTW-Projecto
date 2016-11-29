@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="reset.css" >
     <link rel="stylesheet" href="foodifystyle.css" >
     <link rel="shortcut icon" href="res/logo.png"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+    $(function(){
+    	$('.fadein img:gt(0)').hide();
+    	setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 3000);
+    });
+    </script>
   </head>
 
   <body>
@@ -32,5 +40,12 @@
       </form>
     </div>
 
+    <div class="fadein">
+      <img src="res/s1.jpg">
+      <img src="res/s2.jpg">
+      <img src="res/s3.jpg">
+      <img src="res/s4.jpg">
+      <img src="res/s5.jpg">
+    </div>
   </body>
 </html>
