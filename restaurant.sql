@@ -22,7 +22,7 @@ CREATE TABLE Client(
 	ClientID 		INTEGER PRIMARY KEY,
 	Name 			VARCHAR(255),
 	Password		VARCHAR(255),
-	Username		VARCHAR(255),
+	Username		VARCHAR(255)
 );
 
 --Users
