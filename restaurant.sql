@@ -17,6 +17,14 @@ CREATE TABLE City(
 	Name 			VARCHAR(255)
 );
 
+CREATE TABLE Client(
+	ClientID 		INTEGER PRIMARY KEY,
+	Name 			VARCHAR(255),
+	Password		VARCHAR(255),
+	Username		VARCHAR(255),
+	Owner			BOOLEAN
+);
+
 --Cidades (acrescentar mais?)
 INSERT INTO City(CityID, Name) VALUES (null, 'Porto');
 INSERT INTO City(CityID, Name) VALUES (null, 'Braga');
