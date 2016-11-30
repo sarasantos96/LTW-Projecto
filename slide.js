@@ -1,2 +1,0 @@
-.fadein { position:relative; width:500px; height:332px; }
-.fadein img { position:absolute; left:0; top:0; }
