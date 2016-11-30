@@ -1,5 +1,4 @@
 html body{
-  background-color: #D7D7D7;
   margin : 0% 0%;
   margin-right: 0%;
   margin-left: 0%;
@@ -9,7 +8,7 @@ html body{
 }
 
 #header{
-	background-color: #6DBB81;
+	background-color: #699A62;
 	color: black;
 	line-height: 80px;
 	padding-left: 200px;
@@ -42,8 +41,8 @@ html body{
 
 #signOptions{
   position: absolute;
-	top: 30px;
-	left: 1000px;
+	top: 25px;
+	left: 1050px;
 }
 
 #signOptions ul{
