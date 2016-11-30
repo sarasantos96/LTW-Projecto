@@ -4,4 +4,5 @@
 	$stmt = $dbh->prepare('SELECT * FROM City');
 					   
 	$stmt->execute();
+	
 ?>

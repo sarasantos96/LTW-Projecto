@@ -1,10 +1,12 @@
-<?php
-  session_start();                         // starts the session
-  include_once('database/connection.php'); // connects to the database
-  include_once('database/users.php');      // loads the functions responsible for the users table
+<?php  
+	
+	$db = new PDO('sqlite:restaurant.db');
+	$stmt = $db->prepare('SELECT * FROM Client WHERE Username = :name AND Password = :pass');
+	$stmt->bindParam(':name', $_POST['username']);
+	$stmt->bindParam(':pass', $_POST['password']);
+	$stmt->execute();  
 
-  if (userExists($_POST['username'], $_POST['password']))  // test if user exists
-    $_SESSION['username'] = $_POST['username'];            // store the username
-
-  header('Location: foodify.html' );
+	$result = $stmt->fetchAll() ;
+	echo oi;
+	header('Location: foodify.html');
 ?>

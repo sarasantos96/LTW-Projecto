@@ -3,6 +3,7 @@
 
 DROP TABLE IF EXISTS Restaurant;  
 DROP TABLE IF EXISTS City;  
+DROP TABLE IF EXISTS Client;
 
 CREATE TABLE Restaurant(
 	RestaurantID	INTEGER PRIMARY KEY,
@@ -22,8 +23,10 @@ CREATE TABLE Client(
 	Name 			VARCHAR(255),
 	Password		VARCHAR(255),
 	Username		VARCHAR(255),
-	Owner			BOOLEAN
 );
+
+--Users
+INSERT INTO Client(ClientID, Name, Password, Username) VALUES (null, 'João Silva','1234','joao123');
 
 --Cidades (acrescentar mais?)
 INSERT INTO City(CityID, Name) VALUES (null, 'Porto');
