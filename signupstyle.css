@@ -1,5 +1,5 @@
 html{
-  background-color: #ABD7BE ;
+  background-color: #A1C09D ;
 }
 
 body{
@@ -84,4 +84,9 @@ body{
   position: relative;
   top:35px;
   left: -60px;
+}
+
+.usertype{
+  position: relative;
+  top: 10px;
 }

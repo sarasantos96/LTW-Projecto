@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 html, body{
   background-color: #D7D7D7;
   margin : 0 auto;
   max-width: 100%;
+=======
+html body{
+  margin : 0% 0%;
+  margin-right: 0%;
+  margin-left: 0%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+>>>>>>> origin/master
 }
 
 #header{
@@ -42,8 +52,13 @@ html, body{
 
 #signOptions{
   position: absolute;
+<<<<<<< HEAD
   margin-left: 85%;
   top: 5%;
+=======
+	top: 25px;
+	left: 1050px;
+>>>>>>> origin/master
 }
 
 #signOptions ul{

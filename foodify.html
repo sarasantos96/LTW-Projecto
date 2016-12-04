@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="reset.css" >
     <link rel="stylesheet" href="foodifystyle.css" >
     <link rel="shortcut icon" href="res/logo.png"/>
+  </head>
+
+  <body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
       $(function(){
       	$('.fadein img:gt(0)').hide();
+<<<<<<< HEAD
       	setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 3000);
+=======
+      	setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 2500);
+>>>>>>> origin/master
       });
     </script>
-  </head>
 
-  <body>
     <div id="header">
       <header>
         <img id="headerimg" src = "res/logo.png" alt = "Foodify" height="42" width="42">
