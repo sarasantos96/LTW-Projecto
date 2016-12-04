@@ -1,18 +1,18 @@
-html body{
+html, body{
   background-color: #D7D7D7;
-  margin : 0% 0%;
-  margin-right: 0%;
-  margin-left: 0%;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  margin : 0 auto;
+  max-width: 100%;
 }
 
 #header{
-	background-color: #6DBB81;
+	background-color: #699A62;
 	color: black;
 	line-height: 80px;
-	padding-left: 200px;
+}
+
+#headerText{
+  position:relative;
+  margin-left: 130px;
 }
 
 #headerimg{
@@ -20,7 +20,7 @@ html body{
   width: 90px;
   height: 90px;
 	top: 15px;
-	left: 50px;
+	margin-left: 30px;
 }
 
 #mainTitle{
@@ -42,8 +42,8 @@ html body{
 
 #signOptions{
   position: absolute;
-	top: 30px;
-	left: 1000px;
+  margin-left: 85%;
+  top: 5%;
 }
 
 #signOptions ul{
@@ -52,7 +52,6 @@ html body{
 	font-size: 18px;
 	font-style: normal;
 	font-variant: normal;
-  padding-left: 10px;
 }
 
 #signOptions li{
@@ -66,14 +65,27 @@ html body{
 }
 
 #search{
-  position: relative;
+  position: absolute;
+  margin: 0 auto;
+  margin-top: 5%;
+  width: 100%;
   z-index: 10;
 }
 
+#search .searchQuestion{
+  text-align: center;
+  font-family: "Goudy Old Style";
+	font-size: 40px;
+	font-style: oblique;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 49.5px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 #search .searchbox{
-  position: absolute;
-  top: 200px;
-  left: 400px;
+  margin: 0 auto;
   background-color: #f6f6f6;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eae8e8));
 	background-image: -webkit-linear-gradient(top, #f6f6f6, #eae8e8);
@@ -90,7 +102,6 @@ html body{
 	-webkit-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
 	-moz-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
 	box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
-	margin: 100px auto;
 	overflow: hidden;
 	padding: 8px;
 	width: 450px;
@@ -105,7 +116,7 @@ html body{
 	-moz-border-radius: 3px;
 	border-radius: 3px;
   color: #999;
-	float: left;
+	float: center;
 	font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
 	height: 20px;
 	padding: 10px;
@@ -147,33 +158,16 @@ html body{
 	height: 42px;
 	float: right;
 	font: 15px Arial, Helvetica;
-	padding: 0;
 	text-transform: uppercase;
 	text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
 	width: 100px;
 }
 
-#search .searchQuestion{
-  font-family: "Goudy Old Style";
-	font-size: 40px;
-	font-style: oblique;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: 49.5px;
-  position: relative;
-  top: 100px;
-  left: 440px;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
 .fadein {
   position: relative;
-  top: -50px;
   z-index: 5;
 }
 
 .fadein img{
   width: 100%;
-  height: 100%;
 }
