@@ -6,12 +6,13 @@
     <meta charset="utf-8" >
     <link rel="stylesheet" href="signupstyle.css" >
     <link rel="shortcut icon" href="res/logo.png"/>
-  <head>
+	<script type="text/javascript" src="signup.js"></script>
+  </head>
 
   <body>
     <a href="foodify.html" > <img id="logo" src = "res/logo.png" alt = "Foodify" height="42" width="42"> </a>
     <h2 id="signUp"> Sign up to Foodify </h2>
-    <form class="userdata" action="signup.php" method="post">
+    <form name="signup_form" class="userdata" action="signup.php" method="post" onsubmit="return submitForm()">
         <label id="name"> Name <br>
           <input class="userInput" type="text" name="name" > <br>
         </label>
@@ -23,9 +24,12 @@
         </label>
         <div class="usertype">
           <input type="radio" name="usertype" value="owner">Owner
-          <input type="radio" name="usertype" value="reviewer">Reviewer
+          <input type="radio" name="usertype" value="reviewer" checked="checked">Reviewer
         </div>
         <input id = "signUp" type = "submit" value = "Sign up">
     </form>
+	
+	<p id="warnings"></p>
+	
   </body>
 </html>
