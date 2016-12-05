@@ -28,10 +28,17 @@
         </div>
       </header>
       <div id= "signOptions">
+	  <?php if(isset($_SESSION['username'])) { ?>
         <ul>
-          <li> <a href="login.html"> Log In </a> </li>
-          <li> <a href="signup.html"> Sign Up </a> <li>
-        </ul>
+		   <li> <a href="userPage.php"> Olá </a> </li>
+		   <li> <a href="logout.php"> Log Out </a> </li>
+		</ul>
+	  <?php } else { ?>
+		<ul>
+			  <li> <a href="login.html"> Log In </a> </li>
+			  <li> <a href="signup.html"> Sign Up </a> <li>
+		</ul>
+	  <?php } ?>
       </div>
     </div>
 

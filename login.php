@@ -1,12 +1,19 @@
-<?php  
-	
-	$db = new PDO('sqlite:restaurant.db');
-	$stmt = $db->prepare('SELECT * FROM Client WHERE Username = :name AND Password = :pass');
-	$stmt->bindParam(':name', $_POST['username']);
-	$stmt->bindParam(':pass', $_POST['password']);
-	$stmt->execute();  
+<?php	
+	$username = $_POST['username'];
+	$password = $_POST['password'];
 
-	$result = $stmt->fetchAll() ;
-	echo oi;
-	header('Location: foodify.html');
+	$db = new PDO('sqlite:restaurant.db');
+
+	$stmt = $db->prepare('SELECT * FROM Client WHERE Username = ? AND Password = ?');
+	$stmt->execute(array($username,$password));
+	$result = $stmt->fetchAll();
+
+	if($result){
+		session_start();
+		$_SESSION['username'] = $username;
+		header('Location: foodify.php');
+	}
+	else{
+		header('Location: login.html');
+	}
 ?>
