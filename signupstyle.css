@@ -56,7 +56,7 @@ body{
   height: 20px;
 }
 
-.userdata #signUp{
+.userdata #signUpButton{
   background-color: #0483a0;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#31b2c3), to(#0483a0));
 	background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
