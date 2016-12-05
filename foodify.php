@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+	<?php session_start (); ?>
   <head>
     <title> Foodify - The best places to eat </title>
     <meta charset="utf-8" >
