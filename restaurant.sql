@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS City;
 DROP TABLE IF EXISTS Client;
 
 CREATE TABLE Restaurant(
-	RestaurantID	INTEGER PRIMARY KEY,
+	RestaurantID		INTEGER PRIMARY KEY,
 	Name 			VARCHAR(255),
 	Address 		VARCHAR(255),
 	PhoneNumber		VARCHAR(255),
