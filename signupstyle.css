@@ -29,8 +29,8 @@ body{
 }
 
 #logo{
-  position: relative;
-  left: 80px;
+  display: block;
+  margin: 0 auto;
 }
 
 #signUp{
@@ -52,7 +52,7 @@ body{
 }
 
 .userInput{
-  width: 200px;
+  width: 230px;
   height: 20px;
 }
 
@@ -83,10 +83,32 @@ body{
 
   position: relative;
   top:35px;
-  left: -60px;
+  left: -70px;
 }
 
 .usertype{
   position: relative;
   top: 10px;
+}
+
+.warn{
+  position: relative;
+  top: -20px;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFBDAF), to(#FFD7CE));
+}
+
+#warnings{
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 15px;
+
 }
