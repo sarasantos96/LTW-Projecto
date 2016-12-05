@@ -35,7 +35,7 @@
 		</ul>
 	  <?php } else { ?>
 		<ul>
-			  <li> <a href="login.html"> Log In </a> </li>
+			  <li> <a href="login.php"> Log In </a> </li>
 			  <li> <a href="signup.html"> Sign Up </a> <li>
 		</ul>
 	  <?php } ?>

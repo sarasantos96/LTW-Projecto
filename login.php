@@ -1,19 +1,29 @@
-<?php	
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+<!DOCTYPE html>
 
-	$db = new PDO('sqlite:restaurant.db');
+<html>
+  <head>
+    <title> Foodify - Log In </title>
+    <meta charset="utf-8" >
+    <link rel="stylesheet" href="loginstyle.css" >
+    <link rel="shortcut icon" href="res/logo.png"/>
+  <head>
 
-	$stmt = $db->prepare('SELECT * FROM Client WHERE Username = ? AND Password = ?');
-	$stmt->execute(array($username,$password));
-	$result = $stmt->fetchAll();
+  <body>
+    <a href = "foodify.php"> <img id="logo" src = "res/logo.png" alt = "Foodify" height="42" width="42"> </a>
+    <h2 id="logIn"> Log in to Foodify </h2>
+    <form class="userdata" action="database/login.php" method="post">
+        <label id="username"> Username <br>
+          <input class="userInput" type="text" name="username"> <br>
+        </label>
+        <label id="password"> Password <br>
+          <input class="userInput" type="password" name="password">
+        </label>
+        <input id = "logIn" type = "submit" value = "Log In">
+    </form>
 
-	if($result){
-		session_start();
-		$_SESSION['username'] = $username;
-		header('Location: foodify.php');
-	}
-	else{
-		header('Location: login.html');
-	}
-?>
+    <?php if(request.getAttribute('loginResult') != null && request.getAttribute('loginResult') == false) { ?>
+      <p id="warning"> Incorrect Log In </p>
+    <?php } ?>
+
+  </body>
+</html>
