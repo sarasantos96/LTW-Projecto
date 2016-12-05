@@ -28,7 +28,7 @@
         </div>
       </header>
       <div id= "signOptions">
-	  <?php if(isset($_SESSION['username'])) { ?>
+	  <?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
         <ul>
 		   <li> <a href="userPage.php"> Olá </a> </li>
 		   <li> <a href="logout.php"> Log Out </a> </li>

@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
@@ -9,12 +10,10 @@
 	$result = $stmt->fetchAll();
 
 	if($result){
-		session_start();
 		$_SESSION['username'] = $username;
 		header('Location: foodify.php');
 	}
 	else{
-		$_REQUEST['loginResult'] = false;
-		header('Location: login.html');
+		header('Location: login.php');
 	}
 ?>
