@@ -2,7 +2,7 @@ html, body{
   background-color: #D7D7D7;
   margin : 0 auto;
   max-width: 100%;
-}
+} 
 
 #header{
 	background-color: #699A62;
@@ -102,7 +102,7 @@ html, body{
 	-webkit-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
 	-moz-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
 	box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
-	overflow: hidden;
+	margin-top: 7.5%;
 	padding: 8px;
 	width: 450px;
 }
