@@ -22,6 +22,20 @@
 
 		<?php include_once('templates/header.php'); ?>
 
+		<div id= "signOptions">
+	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
+			<ul>
+		 <li> <a href="userPage.php"> Hello, <?= $_SESSION['username'] ?> </a> </li>
+		 <li> <a href="logout.php"> Log Out </a> </li>
+	</ul>
+	<?php } else { ?>
+	<ul>
+			<li> <a href="login.php"> Log In </a> </li>
+			<li> <a href="signup.html"> Sign Up </a> <li>
+	</ul>
+	<?php } ?>
+		</div>
+
 		<div id="search">
 			<h1 class = "searchQuestion"> Where are you eating today? </h1>
 			<form class = "searchbox" action="search.php" method="get">

@@ -2,7 +2,7 @@ html, body{
   background-color: #D7D7D7;
   margin : 0 auto;
   max-width: 100%;
-} 
+}
 
 #header{
 	background-color: #699A62;
@@ -43,7 +43,7 @@ html, body{
 #signOptions{
   position: absolute;
   margin-left: 80%;
-  top: 5%;
+  top: 8%;
 }
 
 #signOptions ul{
@@ -55,7 +55,7 @@ html, body{
 }
 
 #signOptions li{
-  padding-right: 10px;
+  padding-right: 20px;
   display: inline;
 }
 
