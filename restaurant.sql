@@ -1,8 +1,8 @@
 .mode column
 .headers on
 
-DROP TABLE IF EXISTS Restaurant;
-DROP TABLE IF EXISTS City;
+DROP TABLE IF EXISTS Restaurant;  
+DROP TABLE IF EXISTS City;  
 DROP TABLE IF EXISTS Client;
 
 CREATE TABLE Restaurant(
