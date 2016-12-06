@@ -46,7 +46,7 @@
     <div id="search">
       <h1 class = "searchQuestion"> Where are you eating today? </h1>
       <form class = "searchbox" action="search.php" method="get">
-        <input name="cityName" id="searchb" type = "text" placeholder ="Search for a restaurant or city...">
+        <input name="search" id="searchb" type = "text" placeholder ="Search for a restaurant or city...">
         <input id = "submit" type = "submit" value = "Search">
       </form>
     </div>
