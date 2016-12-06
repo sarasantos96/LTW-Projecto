@@ -48,35 +48,62 @@ function submitForm() {
 		p.appendChild(node);
 		
 		var elem = document.getElementById("warnings");
+		
+		if(elem.childNodes.length == 0)
+			elem.appendChild(p);
+		
+		return false;
+		
+	}
+	
+	$.ajaxSetup({
+		async: false
+	});
+
+	var usernames = [];
+	$.getJSON('signup_check.php', function(data) {
+		$.each(data, function(fieldName, fieldValue) {
+			usernames.push(fieldValue);
+		});
+	});
+	
+	var used_username = false;
+	for(var i = 0; i < usernames.length; i++){
+		if(username == usernames[i]){
+			used_username = true;
+			break;
+		}
+	}
+	
+	if(used_username){
+		var user_warning = "Username already taken! Choose another one.";
+		var p = document.createElement("p");
+		var node = document.createTextNode(user_warning);
+		p.appendChild(node);
+		
+		var elem = document.getElementById("warnings");
+		if(elem.childNodes.length == 1){
+			var child = elem.childNodes[0];
+			elem.removeChild(child);
+		}
+		
 		elem.appendChild(p);
-
+		
+		document.getElementById("signUpButton").style.top = 100+'px';
+		
 		return false;
 	}
-
 }
 
-/*
-function submitForm() {
-	var name = document.forms["signup_form"]["name"].value;
-	if (name == "") {
-		document.getElementById("signUpButton").style.top = 60+'px';
-		document.getElementById("warnings").innerHTML = "Name must be filled out";
-		return false;
-	}
-
-	var username = document.forms["signup_form"]["username"].value;
-	if (username == "") {
-		document.getElementById("signUpButton").style.top = 60+'px';
-		document.getElementById("warnings").innerHTML = "Username must be filled out";
-		return false;
-	}
-
-	var pass = document.forms["signup_form"]["password"].value;
-	if (pass == "") {
-		document.getElementById("signUpButton").style.top = 60+'px';
-		document.getElementById("warnings").innerHTML = "Password must be filled out";
-		return false;
-	}
-
+function loadUsernames() {
+  $.getJSON("signup_check.php", usernamesLoaded);
 }
-*/
+
+function usernamesLoaded(data) {
+  $.each(data, writeUsername);
+  
+}
+
+function writeUsername(key, name) {
+  console.log(name);
+}
