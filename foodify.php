@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+	<?php session_start (); ?>
   <head>
     <title> Foodify - The best places to eat </title>
     <meta charset="utf-8" >
@@ -28,14 +29,14 @@
         </div>
       </header>
       <div id= "signOptions">
-	  <?php if(isset($_SESSION['username'])) { ?>
+	  <?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
         <ul>
-		   <li> <a href="userPage.php"> Olá </a> </li>
+		   <li> <a href="userPage.php"> Hello <?= $_SESSION['username'] ?> </a> </li>
 		   <li> <a href="logout.php"> Log Out </a> </li>
 		</ul>
 	  <?php } else { ?>
 		<ul>
-			  <li> <a href="login.html"> Log In </a> </li>
+			  <li> <a href="login.php"> Log In </a> </li>
 			  <li> <a href="signup.html"> Sign Up </a> <li>
 		</ul>
 	  <?php } ?>
