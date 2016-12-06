@@ -91,24 +91,24 @@ body{
   top: 10px;
 }
 
-.warn{
-  position: relative;
-  top: -20px;
-  clear: both;
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 5px;
-  border: 1px solid red;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFBDAF), to(#FFD7CE));
-}
 
-#warnings{
-  text-align: center;
-  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+#warnings p{
+	position: relative;
+	  top: -20px;
+	  clear: both;
+	  display: inline-block;
+	  overflow: hidden;
+	  border-radius: 5px;
+	  border: 1px solid red;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFBDAF), to(#FFD7CE));
+	  text-align: center;
+	  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 100;
 	line-height: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 
 }

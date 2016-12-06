@@ -41,8 +41,14 @@ function submitForm() {
 		if(names.length == 3)
 			warning = "The " + names[0] + ", " + names[1] + " and " +  names[2] + " parameters must be filled";
 
-		document.getElementById("warnings").innerHTML = warning;
 		document.getElementById("signUpButton").style.top = 110+'px';
+		
+		var p = document.createElement("p");
+		var node = document.createTextNode(warning);
+		p.appendChild(node);
+		
+		var elem = document.getElementById("warnings");
+		elem.appendChild(p);
 
 		return false;
 	}
