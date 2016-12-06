@@ -1,0 +1,102 @@
+html, body{
+  background-color: #D7D7D7;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#header{
+	background-color: #699A62;
+	color: black;
+	line-height: 80px;
+}
+
+#headerText{
+  position:relative;
+  margin-left: 130px;
+}
+
+#headerimg{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+	top: 15px;
+	margin-left: 30px;
+}
+
+#mainTitle{
+  font-family: "Century Gothic";
+	font-size: 45px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+
+#slogan{
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 40px;
+}
+
+#signOptions{
+  position: absolute;
+  margin-left: 80%;
+  top: 5%;
+}
+
+#signOptions ul{
+	list-style: none;
+	font-family: "Franklin Gothic Medium";
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#signOptions li{
+  padding-right: 10px;
+  display: inline;
+}
+
+#signOptions a{
+  text-decoration: none;
+  color: black;
+}
+
+#result{
+	margin: 10px auto;
+}
+
+.restaurant{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#CBCBC3), to(#909088));
+    margin: 5px 15% 0 15%;
+	padding: 20px 0 10px 0;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 25px;
+}
+
+.restaurant h2{
+	margin: 0 0 0 10%;
+	font-family: "Segoe UI";
+	font-size: 18px;
+	line-height: 20px;
+}
+
+.restaurant p{
+	margin: 0 0 0 15%;
+	padding-top: 5px;
+	font-family: "Century Gothic";
+	font-size: 15px;
+	line-height: 18px;
+}
+
+.button{
+	background-color: #699A62;
+	text-align: center;
+	border: 1px solid;
+	border-color: black;
+	border-radius: 25px;
+	font-size: 16px;
+	font-family: "Segoe UI";
+}
