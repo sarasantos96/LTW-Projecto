@@ -41,7 +41,7 @@ function submitForm() {
 		if(names.length == 3)
 			warning = "The " + names[0] + ", " + names[1] + " and " +  names[2] + " parameters must be filled";
 
-		document.getElementById("signUpButton").style.top = 110+'px';
+		document.getElementById("signUpButton").style.top = 130+'px';
 		
 		var p = document.createElement("p");
 		var node = document.createTextNode(warning);
@@ -49,8 +49,12 @@ function submitForm() {
 		
 		var elem = document.getElementById("warnings");
 		
-		if(elem.childNodes.length == 0)
-			elem.appendChild(p);
+		if(elem.childNodes.length == 1){
+			var child = elem.childNodes[0];
+			elem.removeChild(child);
+		}
+		
+		elem.appendChild(p);
 		
 		return false;
 		
@@ -89,7 +93,7 @@ function submitForm() {
 		
 		elem.appendChild(p);
 		
-		document.getElementById("signUpButton").style.top = 100+'px';
+		document.getElementById("signUpButton").style.top = 130+'px';
 		
 		return false;
 	}
