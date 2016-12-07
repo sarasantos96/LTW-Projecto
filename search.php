@@ -2,24 +2,32 @@
 	$search = $_GET['search'];
 	$db = new PDO('sqlite:restaurant.db');
 	$count = 1;
+	$cities = NULL;
+	$restaurants = NULL;
 
-	#Procura restaurantes na cidade com aquele nome
-	$city = $db->prepare('SELECT Restaurant.Name AS ResName, Address, PhoneNumber
-						FROM Restaurant, City 
-						WHERE Restaurant.CityID = City.CityID 
-						AND City.Name LIKE ?');
-	$city->bindValue(1, "%$search%", PDO::PARAM_STR);
-	$city->execute();
-	$cities = $city->fetchAll();
-	
-	#Procura restaurantes com aquele nome
-	$restaurant = $db->prepare('SELECT * FROM Restaurant WHERE Restaurant.Name LIKE ?');
-	$restaurant->bindValue(1, "%$search%", PDO::PARAM_STR);
-	$restaurant->execute();
-	$restaurants = $restaurant->fetchAll();
+	if($search != NULL){
+		#Procura restaurantes na cidade com aquele nome
+		$city = $db->prepare('SELECT Restaurant.Name AS ResName, Address, PhoneNumber
+							FROM Restaurant, City 
+							WHERE Restaurant.CityID = City.CityID 
+							AND City.Name LIKE ?');
+		$city->bindValue(1, "%$search%", PDO::PARAM_STR);
+		$city->execute();
+		$cities = $city->fetchAll();
+		
+		#Procura restaurantes com aquele nome
+		$restaurant = $db->prepare('SELECT * FROM Restaurant WHERE Restaurant.Name LIKE ?');
+		$restaurant->bindValue(1, "%$search%", PDO::PARAM_STR);
+		$restaurant->execute();
+		$restaurants = $restaurant->fetchAll();
+	}else{
+		$search = "blank";
+	}
 ?>
+
 <!DOCTYPE html>
 <html>
+	<?php session_start(); ?>
 	<head>
 		<title>Foodify - The best places to eat</title>
 		<meta charset="UTF-8">
@@ -27,15 +35,9 @@
 		<link rel="stylesheet" href="search.css" >
 		<link rel="shortcut icon" href="res/logo.png"/>
 	</head>
+	
 	<body>
-		<div id="header">
-		  <header>
-			<img id="headerimg" src = "res/logo.png" alt = "Foodify" height="42" width="42">
-			<div id="headerText">
-			  <h1 id ="mainTitle"> Foodify </h1>
-			  <h2 id="slogan"> Eat what you want, where you want </h2>
-			</div>
-		  </header>
+		<?php include_once('templates/header.php'); ?>
 		  <div id= "signOptions">
 		  <?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
 			<ul>
@@ -48,12 +50,14 @@
 				  <li> <a href="signup.html"> Sign Up </a> <li>
 			</ul>
 		  <?php } ?>
-		  </div>
 		</div>
+		
 		<div id="result">
 			<?php if($cities == NULL): ?>
 				<?php if($restaurants == NULL): ?>
-					<p> Não encontrou nada </p>
+					<div class="noResult">
+						<p> No search results for <?=$search?> </p>
+					</div>
 				<?php else: ?>
 					<?php foreach($restaurants as $row): ?>
 						<div class="restaurant">
@@ -62,8 +66,8 @@
 								<?=$row['Name']?>
 							</h2>
 							<p>
-								<?=$row['Address']?></br>
-								<?=$row['PhoneNumber']?>
+								  Morada: <?=$row['Address']?></br>
+								Contacto: <?=$row['PhoneNumber']?>
 							</p>
 						<?php $count = $count + 1; ?>
 						<button class="button" type="button">Go to page</button>
@@ -78,8 +82,8 @@
 							<?=$row['ResName']?>
 						</h2>
 						<p>
-							<?=$row['Address']?></br>
-							<?=$row['PhoneNumber']?>
+							  Morada: <?=$row['Address']?></br>
+							Contacto: <?=$row['PhoneNumber']?>
 						</p>
 						</br>
 						<?php $count = $count + 1; ?>
@@ -87,6 +91,7 @@
 					</div>
 				<?php endforeach; ?>
 			<?php endif ?>
+			<button class="backButton" type="button" onclick="location.href = 'foodify.php'">Back to main page</button>
 		</div>
 	</body>
 </html>
