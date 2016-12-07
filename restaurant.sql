@@ -27,7 +27,7 @@ CREATE TABLE Client(
 );
 
 --Users
-INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'João Silva','1234','joao123', 'res/profile-icon.png');
+INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'João Silva','7110eda4d09e062aa5e4a390b0a572ac0d2c0220','joao123', 'res/profile-icon.png');
 
 --Cidades (acrescentar mais?)
 INSERT INTO City(CityID, Name) VALUES (null, 'Porto');
