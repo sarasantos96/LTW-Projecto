@@ -25,7 +25,7 @@
       <img id="profimg" src = <?php echo userPhoto(); ?> alt = "Foodify" height="200" width="200">
       <h1 id="userfullname"> <?php echo userFullName(); ?> </h1>
       <h2 id="username" > <?= $_SESSION['username'] ?></h2>
-      <button id="edit" onclick="location.href = 'editUserpage.php'"> Edit Profile </button>
+      <button id="editButton" onclick="location.href = 'editUserpage.php'"> Edit Profile </button>
     </div>
   </body>
 </html>
