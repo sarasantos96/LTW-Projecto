@@ -61,33 +61,26 @@
 				<?php else: ?>
 					<?php foreach($restaurants as $row): ?>
 						<div class="restaurant">
-							<h2>
+							<h2 name="restName">
 								<?=$count?>
 								<?=$row['Name']?>
 							</h2>
 							<p>
-								  Morada: <?=$row['Address']?></br>
-								Contacto: <?=$row['PhoneNumber']?>
+								Address: <?=$row['Address']?></br>
+								Contact: <?=$row['PhoneNumber']?>
 							</p>
 						<?php $count = $count + 1; ?>
-						<button class="button" type="button">Go to page</button>
 						</div>
 					<?php endforeach; ?>
 				<?php endif ?>
 			<?php else: ?>
 				<?php foreach($cities as $row): ?>
 					<div class="restaurant">
-						<h2>
-							<?=$count?>.
-							<?=$row['ResName']?>
-						</h2>
-						<p>
-							  Morada: <?=$row['Address']?></br>
-							Contacto: <?=$row['PhoneNumber']?>
-						</p>
-						</br>
+						<h2> <?=$count?>. <?=$row['ResName']?></h2>
 						<?php $count = $count + 1; ?>
-						<button class="button" type="button">Go to page</button>
+						<p> Address: <?=$row['Address']?></br>Contact: <?=$row['PhoneNumber']?></p></br>
+						<?php $_SESSION['restaurant'] = $row['ResName']?>
+						<button class="button" type="button" onclick="location.href='restaurantPage.php'">Go to page</button>
 					</div>
 				<?php endforeach; ?>
 			<?php endif ?>
