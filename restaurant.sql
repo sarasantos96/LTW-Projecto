@@ -22,11 +22,12 @@ CREATE TABLE Client(
 	ClientID 		INTEGER PRIMARY KEY,
 	Name 			VARCHAR(255),
 	Password		VARCHAR(255),
-	Username		VARCHAR(255)
+	Username		VARCHAR(255),
+	Photo 			VARCHAR(255)
 );
 
 --Users
-INSERT INTO Client(ClientID, Name, Password, Username) VALUES (null, 'João Silva','1234','joao123');
+INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'João Silva','1234','joao123', 'res/profile-icon.png');
 
 --Cidades (acrescentar mais?)
 INSERT INTO City(CityID, Name) VALUES (null, 'Porto');

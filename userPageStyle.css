@@ -62,3 +62,9 @@ html{
   text-decoration: none;
   color: black;
 }
+
+#profimg{
+  position: relative;
+  top: 50px;
+  left: 30px;
+}
