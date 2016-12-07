@@ -2,11 +2,13 @@
 	session_start ();
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	
+	$hashed_password = sha1($password);
 
 	$db = new PDO('sqlite:restaurant.db');
 
 	$stmt = $db->prepare('SELECT * FROM Client WHERE Username = ? AND Password = ?');
-	$stmt->execute(array($username,$password));
+	$stmt->execute(array($username,$hashed_password));
 	$result = $stmt->fetchAll();
 
 	if($result){

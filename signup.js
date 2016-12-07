@@ -43,18 +43,7 @@ function submitForm() {
 
 		document.getElementById("signUpButton").style.top = 130+'px';
 		
-		var p = document.createElement("p");
-		var node = document.createTextNode(warning);
-		p.appendChild(node);
-		
-		var elem = document.getElementById("warnings");
-		
-		if(elem.childNodes.length == 1){
-			var child = elem.childNodes[0];
-			elem.removeChild(child);
-		}
-		
-		elem.appendChild(p);
+		updateWarning(warning);
 		
 		return false;
 		
@@ -80,34 +69,32 @@ function submitForm() {
 	}
 	
 	if(used_username){
-		var user_warning = "Username already taken! Choose another one.";
-		var p = document.createElement("p");
-		var node = document.createTextNode(user_warning);
-		p.appendChild(node);
-		
-		var elem = document.getElementById("warnings");
-		if(elem.childNodes.length == 1){
-			var child = elem.childNodes[0];
-			elem.removeChild(child);
-		}
-		
-		elem.appendChild(p);
+		updateWarning("Username already taken! Choose another one.");
 		
 		document.getElementById("signUpButton").style.top = 130+'px';
 		
 		return false;
 	}
+	
+	if(pass.length < 8){
+		updateWarning("Password must be at least 8 caracters long!");
+		
+		document.getElementById("signUpButton").style.top = 120+'px';
+		
+		return false;
+	}
 }
 
-function loadUsernames() {
-  $.getJSON("signup_check.php", usernamesLoaded);
-}
-
-function usernamesLoaded(data) {
-  $.each(data, writeUsername);
-  
-}
-
-function writeUsername(key, name) {
-  console.log(name);
+function updateWarning(warning){
+var p = document.createElement("p");
+	var node = document.createTextNode(warning);
+	p.appendChild(node);
+	
+	var elem = document.getElementById("warnings");
+	if(elem.childNodes.length == 1){
+		var child = elem.childNodes[0];
+		elem.removeChild(child);
+	}
+	
+	elem.appendChild(p);
 }
