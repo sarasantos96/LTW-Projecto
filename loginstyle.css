@@ -55,7 +55,7 @@ body{
   height: 25px;
 }
 
-.userdata #logIn{
+.userdata #logInButton{
   background-color: #0483a0;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#31b2c3), to(#0483a0));
 	background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
@@ -83,4 +83,25 @@ body{
   position: relative;
   top:35px;
   left: -50px;
+}
+
+#warnings p{
+	position: relative;
+	  top: -20px;
+	  clear: both;
+	  display: inline-block;
+	  overflow: hidden;
+	  border-radius: 5px;
+	  border: 1px solid red;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFBDAF), to(#FFD7CE));
+	  text-align: center;
+	  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
 }
