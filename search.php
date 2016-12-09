@@ -7,7 +7,7 @@
 
 	if($search != NULL){
 		#Procura restaurantes na cidade com aquele nome
-		$city = $db->prepare('SELECT Restaurant.Name AS ResName, Address, PhoneNumber
+		$city = $db->prepare('SELECT Restaurant.Name AS ResName, Address, PhoneNumber, RestaurantID
 							FROM Restaurant, City 
 							WHERE Restaurant.CityID = City.CityID 
 							AND City.Name LIKE ?');
@@ -79,8 +79,7 @@
 						<h2> <?=$count?>. <?=$row['ResName']?></h2>
 						<?php $count = $count + 1; ?>
 						<p> Address: <?=$row['Address']?></br>Contact: <?=$row['PhoneNumber']?></p></br>
-						<?php $_SESSION['restaurant'] = $row['ResName']?>
-						<button class="button" type="button" onclick="location.href='restaurantPage.php'">Go to page</button>
+						<button class="button" type="button" onclick="location.href = 'restaurantPage.php?id=<?=$row['RestaurantID']?>'">Go to page</button>
 					</div>
 				<?php endforeach; ?>
 			<?php endif ?>
