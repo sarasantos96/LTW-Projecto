@@ -112,7 +112,10 @@ html, body{
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 30px;
-  padding-top: 5px;
+}
+
+.edit input{
+  margin-bottom: 10px;
 }
 
 .userInput{
@@ -123,7 +126,7 @@ html, body{
 
 #applyButton{
   position: relative;
-  top: 40px;
+  top: 10px;
   background-color: #0483a0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#31b2c3), to(#0483a0));
   background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
@@ -149,5 +152,39 @@ html, body{
 
 .photoForm{
   position: relative;
-  top:50px;
+  top:60px;
+  margin-left: 20px;
+}
+
+.photoForm #submitButton{
+  position: relative;
+  top: 5px;
+}
+
+#newpassword {
+  white-space: nowrap;
+  font-family: Candara;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+#oldpassword {
+  white-space: nowrap;
+  display: block;
+  font-family: Candara;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+  padding-top: 5px;
+  position: relative;
+}
+
+#oldPasswordInput input{
+  position: relative;
+  left: 6.5px;
 }
