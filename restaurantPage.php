@@ -1,17 +1,33 @@
-<?php
-	session_start();
-	
-	$db = new PDO('sqlite:restaurant.db');
-	$id = $_GET['id'];
-	
-	$restaurant = $db->prepare('SELECT * FROM Restaurant WHERE RestaurantID = ?');
-	$restaurant->bindValue(1, "$id", PDO::PARAM_STR);
-	$restaurant->execute();
-	$restData = $restaurant->fetch();
-	
-	echo $restData['Name'];
-	echo PHP_EOL ;
-	echo $restData['Address'];
-	echo PHP_EOL ;
-	echo $restData['PhoneNumber'];
-?>
+<!DOCTYPE html>
+<html>
+	<?php session_start(); ?>
+	<head>
+		<title>Foodify - The best places to eat</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/reset.css" >
+		<link rel="stylesheet" href="styles/search.css" >
+		<link rel="shortcut icon" href="res/logo.png"/>
+	</head>
+
+	<body>
+		<?php include_once('templates/header.php'); ?>
+		  <div id= "signOptions">
+		  <?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
+			<ul>
+			   <li> <a href="userPage.php"> Hello <?= $_SESSION['username'] ?> </a> </li>
+			   <li> <a href="database/logout.php"> Log Out </a> </li>
+			</ul>
+		  <?php } else { ?>
+			<ul>
+				  <li> <a href="login.php"> Log In </a> </li>
+				  <li> <a href="signup.php"> Sign Up </a> <li>
+			</ul>
+		  <?php } ?>
+		</div>
+		<div id="restaurant">
+			<?php include_once('database/getRestaurantByID.php'); ?>
+			<p><?=$restData['Name']?></p>
+			<p><?=$restData['Address']?></p>
+			<p><?=$restData['PhoneNumber']?></p>
+		</div>
+	</body>
