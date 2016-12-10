@@ -71,7 +71,7 @@ html{
 
 #userfullname{
   position: relative;
-  top: -130px;
+  top: -160px;
   margin-left: 270px;
 
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -84,7 +84,7 @@ html{
 
 #username{
   position: relative;
-  top: -120px;
+  top: -150px;
   margin-left: 280px;
 
   font-family: Candara;
@@ -121,4 +121,32 @@ html{
   padding: 0;
   text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
   width: 100px;
+}
+
+.myRestaurants{
+  position: relative;
+  top: -170px;
+  left: 280px;
+  width: 400px;
+  border: 1px solid #AFB0B0;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#AFB0B0), to(#949494));
+}
+
+.myRestaurants h2{
+  margin : 20px 20px 20px 10px;
+  font-family: "Century Gothic";
+	font-size: 24px;
+}
+
+.restaurant{
+  margin : 20px 20px 20px 10px;
+  height: 300px;
+  overflow-y: scroll;
+  font-family: "Century Gothic";
+	font-size: 16px;
+}
+
+.restaurant p{
+  margin: 5px 5px 5px 5px;
 }

@@ -12,6 +12,7 @@
 
   <body>
     <?php include_once('templates/header.php'); ?>
+    <?php include_once('database/userData.php'); $path = 'sqlite:restaurant.db'?>
 
     <div id= "signOptions">
       <ul>
@@ -21,11 +22,28 @@
     </div>
 
     <div class = "userInfo">
-      <?php include_once('database/userData.php'); $path = 'sqlite:restaurant.db'?>
       <img id="profimg" src = <?php echo userPhoto($path); ?> alt = "Foodify" height="200" width="200">
       <h1 id="userfullname"> <?php echo userFullName($path); ?> </h1>
       <h2 id="username" > <?= $_SESSION['username'] ?></h2>
       <button id="editButton" onclick="location.href = 'editUserpage.php'"> Edit Profile </button>
+    </div>
+
+    <?php
+      $id = userID($path);
+      $restaurants = userRestaurants($path, $id);
+
+      if($restaurants != null){
+    ?>
+    <div class="myRestaurants">
+      <h2> My Restaurants </h2>
+      <div class = "restaurant">
+        <?php
+            foreach ($restaurants as $restaurant) {
+              echo  "<p>" . $restaurant['Name'] . "</p>";
+            }
+          }
+        ?>
+      </div>
     </div>
   </body>
 </html>

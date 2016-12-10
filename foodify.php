@@ -45,11 +45,11 @@
 		</div>
 
     <div class="fadein">
-      <img src="res/s1.jpg">
-      <img src="res/s2.jpg">
-      <img src="res/s3.jpg">
-      <img src="res/s4.jpg">
-      <img src="res/s5.jpg">
+      <img src="res/s1.jpg" height="800">
+      <img src="res/s2.jpg" height="800">
+      <img src="res/s3.jpg" height="800">
+      <img src="res/s4.jpg" height="800">
+      <img src="res/s5.jpg" height="800">
     </div>
   </body>
 </html>

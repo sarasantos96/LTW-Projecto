@@ -19,6 +19,16 @@
     return $result['Photo'];
   }
 
+  function userID($path){
+    $db = new PDO($path);
+
+    $stmt = $db->prepare('SELECT ClientID FROM Client WHERE Username = ?');
+    $stmt->execute(array($_SESSION['username']));
+    $result = $stmt->fetch();
+
+    return $result['ClientID'];
+  }
+
   function getUserPass(){
     $db = new PDO('sqlite:../restaurant.db');
 
@@ -27,6 +37,16 @@
     $result = $stmt->fetch();
 
     return $result['Password'];
+  }
+
+  function userRestaurants($path, $id){
+    $db = new PDO($path);
+
+    $stmt = $db->prepare('SELECT * FROM Restaurant WHERE OwnerID = ?');
+    $stmt->execute(array($id));
+    $result = $stmt->fetchAll();
+
+    return $result;
   }
 
   function setUserFullName($newuserfullname){
