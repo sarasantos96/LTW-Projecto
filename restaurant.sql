@@ -4,6 +4,7 @@
 DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS City;
 DROP TABLE IF EXISTS Client;
+DROP TABLE IF EXISTS Review;
 
 CREATE TABLE Restaurant(
 	RestaurantID		INTEGER PRIMARY KEY,
@@ -27,8 +28,21 @@ CREATE TABLE Client(
 	Photo 			VARCHAR(255)
 );
 
+CREATE TABLE Review(
+	ReviewID		INTEGER PRIMARY KEY,
+	ReviewerID		INTEGER,
+	Review			VARCHAR(255),
+	RestaurantID	INTEGER
+);
+
+--Reviews
+INSERT INTO Review(ReviewID, ReviewerID, Review, RestaurantID) VALUES (null, 2, 'Muito bom 5/7', 1);
+INSERT INTO Review(ReviewID, ReviewerID, Review, RestaurantID) VALUES (null, 3, 'Melhor Rolo de Carne que já comi!!!!!!', 1);
+
 --Users
 INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'João Silva','7110eda4d09e062aa5e4a390b0a572ac0d2c0220','joao123', 'res/profile-icon.png');
+INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'Pedro Sousa','008bc2b4567f03da2d92d12cbdd5f919e22146de','psousa', 'res/profile-icon.png');
+INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'Nuno Miguel','af878c86bf240deefd84b07390ea335f1f91ccf5','gamernuno', 'res/profile-icon.png');
 
 --Cidades (acrescentar mais?)
 INSERT INTO City(CityID, Name) VALUES (null, 'Porto');
