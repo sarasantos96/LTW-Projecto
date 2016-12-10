@@ -42,24 +42,24 @@ function submitForm() {
 			warning = "The " + names[0] + ", " + names[1] + " and " +  names[2] + " parameters must be filled";
 
 		document.getElementById("signUpButton").style.top = 130+'px';
-		
+
 		updateWarning(warning);
-		
+
 		return false;
-		
+
 	}
-	
+
 	$.ajaxSetup({
 		async: false
 	});
 
 	var usernames = [];
-	$.getJSON('signup_check.php', function(data) {
+	$.getJSON('database/signup_check.php', function(data) {
 		$.each(data, function(fieldName, fieldValue) {
 			usernames.push(fieldValue);
 		});
 	});
-	
+
 	var used_username = false;
 	for(var i = 0; i < usernames.length; i++){
 		if(username == usernames[i]){
@@ -67,20 +67,20 @@ function submitForm() {
 			break;
 		}
 	}
-	
+
 	if(used_username){
 		updateWarning("Username already taken! Choose another one.");
-		
+
 		document.getElementById("signUpButton").style.top = 130+'px';
-		
+
 		return false;
 	}
-	
+
 	if(pass.length < 8){
 		updateWarning("Password must be at least 8 caracters long!");
-		
+
 		document.getElementById("signUpButton").style.top = 120+'px';
-		
+
 		return false;
 	}
 }
@@ -89,12 +89,12 @@ function updateWarning(warning){
 var p = document.createElement("p");
 	var node = document.createTextNode(warning);
 	p.appendChild(node);
-	
+
 	var elem = document.getElementById("warnings");
 	if(elem.childNodes.length == 1){
 		var child = elem.childNodes[0];
 		elem.removeChild(child);
 	}
-	
+
 	elem.appendChild(p);
 }

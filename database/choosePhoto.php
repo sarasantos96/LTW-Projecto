@@ -15,13 +15,13 @@
       }
 
       if(empty($errors)==true) {
-         move_uploaded_file($file_tmp,"res/".$file_name);
-         $db = new PDO('sqlite:restaurant.db');
+         move_uploaded_file($file_tmp,"../res/".$file_name);
+         $db = new PDO('sqlite:../restaurant.db');
          $stmt = $db->prepare('UPDATE Client SET Photo = ? WHERE Username = ?');
          $stmt->execute(array("res/".$file_name,$_SESSION['username']));
       }else{
          print_r($errors);
       }
    }
-   header('Location: editUserpage.php');
+   header('Location: ../editUserpage.php');
 ?>

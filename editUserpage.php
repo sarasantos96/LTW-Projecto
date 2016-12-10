@@ -6,8 +6,8 @@
   <head>
     <title> Edit My Profile </title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="reset.css" >
-    <link rel="stylesheet" href="editUserPageStyle.css" />
+    <link rel="stylesheet" href="styles/reset.css" >
+    <link rel="stylesheet" href="styles/editUserPageStyle.css" />
     <link rel="shortcut icon" href="res/logo.png"/>
   </head>
 
@@ -22,15 +22,15 @@
     </div>
 
     <div class="userInput">
-        <?php include_once('userData.php'); ?>
-        <img id="profimg" src = <?php echo userPhoto(); ?> alt = "Foodify" height="200" width="200"> <br>
-        <form class="photoForm" action="choosePhoto.php" method="POST" enctype="multipart/form-data">
+        <?php include_once('database/userData.php'); $path = 'sqlite:restaurant.db' ?>
+        <img id="profimg" src = <?php echo userPhoto($path); ?> alt = "Foodify" height="200" width="200"> <br>
+        <form class="photoForm" action="database/choosePhoto.php" method="POST" enctype="multipart/form-data">
          <input type="file" name="image"  />
          <input id ="submitButton" type="submit"/>
         </form>
-        <form name="edit_form" class="edit" action="applyProfileChanges.php" method="post">
+        <form name="edit_form" class="edit" action="database/applyProfileChanges.php" method="post">
             <label id="name"> Name <br>
-              <?php $name = userFullName(); ?>
+              <?php $name = userFullName($path); ?>
               <input class="userInput" type="text" name="name" value= " <?= $name ?> " <br>
             </label>
             <label id="username"> Username <br>

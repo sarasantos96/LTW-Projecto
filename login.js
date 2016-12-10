@@ -15,7 +15,7 @@ function submitForm() {
 	if(!username_check || !password_check){
 		var names = [];
 		var warning;
-		
+
 		if(!username_check)
 			names.push("username");
 		if(!password_check)
@@ -29,34 +29,34 @@ function submitForm() {
 		}
 
 		document.getElementById("logInButton").style.top = 110+'px';
-		
+
 		var p = document.createElement("p");
 		var node = document.createTextNode(warning);
 		p.appendChild(node);
-		
+
 		var elem = document.getElementById("warnings");
-		
+
 		if(elem.childNodes.length == 1){
 			var child = elem.childNodes[0];
 			elem.removeChild(child);
 		}
-		
+
 		elem.appendChild(p);
-		
+
 		return false;
 	}
-	
+
 	$.ajaxSetup({
 		async: false
 	});
 
 	var usernames = [];
-	$.getJSON('signup_check.php', function(data) {
+	$.getJSON('database/signup_check.php', function(data) {
 		$.each(data, function(fieldName, fieldValue) {
 			usernames.push(fieldValue);
 		});
 	});
-	
+
 	var existing_username = false;
 	for(var i = 0; i < usernames.length; i++){
 		if(username == usernames[i]){
@@ -64,23 +64,23 @@ function submitForm() {
 			break;
 		}
 	}
-	
+
 	if(!existing_username){
 		var user_warning = "Username doesn't exist!";
 		var p = document.createElement("p");
 		var node = document.createTextNode(user_warning);
 		p.appendChild(node);
-		
+
 		var elem = document.getElementById("warnings");
 		if(elem.childNodes.length == 1){
 			var child = elem.childNodes[0];
 			elem.removeChild(child);
 		}
-		
+
 		elem.appendChild(p);
-		
+
 		document.getElementById("logInButton").style.top = 95+'px';
-		
+
 		return false;
 	}
 }

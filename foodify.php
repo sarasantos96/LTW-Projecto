@@ -5,8 +5,8 @@
   <head>
     <title> Foodify - The best places to eat </title>
     <meta charset="utf-8" >
-    <link rel="stylesheet" href="reset.css" >
-    <link rel="stylesheet" href="foodifystyle.css" >
+    <link rel="stylesheet" href="styles/reset.css" >
+    <link rel="stylesheet" href="styles/foodifystyle.css" >
     <link rel="shortcut icon" href="res/logo.png"/>
   </head>
 
@@ -26,12 +26,12 @@
 	<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
 			<ul>
 		 <li> <a href="userPage.php"> Hello, <?= $_SESSION['username'] ?> </a> </li>
-		 <li> <a href="logout.php"> Log Out </a> </li>
+		 <li> <a href="database/logout.php"> Log Out </a> </li>
 	</ul>
 	<?php } else { ?>
 	<ul>
 			<li> <a href="login.php"> Log In </a> </li>
-			<li> <a href="signup.html"> Sign Up </a> <li>
+			<li> <a href="signup.php"> Sign Up </a> <li>
 	</ul>
 	<?php } ?>
 		</div>
