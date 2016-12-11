@@ -32,12 +32,13 @@ CREATE TABLE Review(
 	ReviewID		INTEGER PRIMARY KEY,
 	ReviewerID		INTEGER,
 	Review			VARCHAR(255),
+	Score			Integer,
 	RestaurantID	INTEGER
 );
 
 --Reviews
-INSERT INTO Review(ReviewID, ReviewerID, Review, RestaurantID) VALUES (null, 2, 'Muito bom 5/7', 1);
-INSERT INTO Review(ReviewID, ReviewerID, Review, RestaurantID) VALUES (null, 3, 'Melhor Rolo de Carne que já comi!!!!!!', 1);
+INSERT INTO Review(ReviewID, ReviewerID, Review, Score, RestaurantID) VALUES (null, 2, 'Muito bom 5/7', 4, 1);
+INSERT INTO Review(ReviewID, ReviewerID, Review, Score, RestaurantID) VALUES (null, 3, 'Melhor Rolo de Carne que já comi!!!!!!', 5, 1);
 
 --Users
 INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'João Silva','7110eda4d09e062aa5e4a390b0a572ac0d2c0220','joao123', 'res/profile-icon.png');

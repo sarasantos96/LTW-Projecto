@@ -7,6 +7,10 @@
 		<link rel="stylesheet" href="styles/reset.css" >
 		<link rel="stylesheet" href="styles/restaurantPage.css" >
 		<link rel="shortcut icon" href="res/logo.png"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="addReview.js"></script>
+		<script type="text/javascript" src="addReview.js"></script>
+		<link rel="stylesheet" href="styles/addReview.css" >
 	</head>
 
 	<body>
@@ -46,5 +50,23 @@
 					<p> Very good Restaurant... Hmm yes</p>
 				</div>
 			</div>
+			
+			<div class="userInput" id="form_id">
+				<form name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post">
+					<label id="name"> Review <br>
+					  <input class="userInput" type="text" name="review" > <br>
+					</label>
+					
+					<div class="rating">
+						<span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
+						<span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+						<span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+						<span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+						<span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+					</div>
+					<input id = "signUpButton" type = "submit" value = "Submit Review" Review">
+				</form>
+			</div>
+			<input id="review_button" type="button" onclick="review_click()" value="Add Review">
 		</div>
 	</body>
