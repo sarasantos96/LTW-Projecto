@@ -16,7 +16,8 @@
 	<body>
 		<?php include_once('templates/header.php'); ?>
 		<?php include_once('database/getRestaurantByID.php'); ?>
-		<?php include_once('database/getReviews.php'); ?>
+		<?php include_once('database/reviewData.php'); ?>
+		
 		<div id= "signOptions">
 			<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
 			<ul>
@@ -33,15 +34,23 @@
 		<div class="container">
 			<div id="data">
 				<h1 id="restaurantName"><?=$restData['Name']?></h1>
-				<img src="res/profile-icon" alt="Foodify" height="400" width="400">
+				<img id="restPic" src="res/profile-icon" alt="Foodify" height="400" width="400">
 				<h1 id="information">Information: </h1>
 				<p>Address: <?=$restData['Address']?></p>
-				<p>Contact: <?=$restData['PhoneNumber']?></p>
-				<?php foreach($reviews as $row): ?>
-					<div class="comment">
-						<p id="review"><?=$row['Review']?></p>
-					</div>
-				<?php endforeach; ?>
+				<p>Contact: <?=$restData['PhoneNumber']?></p></br>
+				<?php
+					$id = $_GET['id'];
+					$reviews = getReviews($id);
+					if($reviews != NULL):
+						foreach($reviews as $row): ?>
+							<div class="comment">
+								<img id="profilePic" src="<?php echo reviewerPic($row['ReviewerID']);?>" alt="Foodify" height="50" width="50">
+								<p id="username"><?php echo reviewerUsername($row['ReviewerID']);?> said: </p>
+								<p id="review"><?=$row['Review']?></p>
+							</div>
+						<?php endforeach;
+					endif;
+				?>
 			</div>
 			<div class="userInput" id="form_id">
 				<form name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post">

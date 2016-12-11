@@ -76,7 +76,7 @@ html, body{
     height: auto;
 }
 
-.container #data img{
+.container #data #restPic{
 	float: left;
 	margin: 10px 20px;
 	border: 1px solid;
@@ -109,8 +109,37 @@ html, body{
 	font-variant: normal;
 }
 
+.container .comment{
+	background-color: #699A62;
+	margin-top: 10px;
+	margin-left: 30%;
+	border: 1px solid;
+	border-color: black;
+	border-radius: 25px;
+	width: 500px;
+	height: auto;
+}
+
+.container .comment #profilePic{
+	float: left;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 5px;
+	border: 1px solid;
+	border-color: black;
+}
+
+.container .comment #username{
+	margin-left: 10%;
+	font-family: "Franklin Gothic Medium";
+	font-weight: none;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+}
+
 .container .comment #review{
-	margin-left: 35%;
+	margin-left: 15%;
 	font-family: "Franklin Gothic";
 	font-weight: none;
 	font-size: 15px;
