@@ -15,8 +15,10 @@
 
 	<body>
 		<?php include_once('templates/header.php'); ?>
-		  <div id= "signOptions">
-		  <?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
+		<?php include_once('database/getRestaurantByID.php'); ?>
+		<?php include_once('database/getReviews.php'); ?>
+		<div id= "signOptions">
+			<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
 			<ul>
 			   <li> <a href="userPage.php"> Hello <?= $_SESSION['username'] ?> </a> </li>
 			   <li> <a href="database/logout.php"> Log Out </a> </li>
@@ -28,29 +30,19 @@
 			</ul>
 		  <?php } ?>
 		</div>
-		<div id="restaurant">
-			<?php include_once('database/getRestaurantByID.php'); ?>
-			<h1><?=$restData['Name']?></h1>
-			<div id="image">
-				<img id="profimg" src="res/profile-icon" alt = "Foodify" height="400" width="400"> <br>
-			</div>
+		<div class="container">
 			<div id="data">
-				<h1>Information<h1>
+				<h1 id="restaurantName"><?=$restData['Name']?></h1>
+				<img src="res/profile-icon" alt="Foodify" height="400" width="400">
+				<h1 id="information">Information: </h1>
 				<p>Address: <?=$restData['Address']?></p>
 				<p>Contact: <?=$restData['PhoneNumber']?></p>
+				<?php foreach($reviews as $row): ?>
+					<div class="comment">
+						<p id="review"><?=$row['Review']?></p>
+					</div>
+				<?php endforeach; ?>
 			</div>
-			<div id="comments">
-				<div id="userPic">
-					<img id="profimg" src="res/profile-icon" alt = "Foodify" height="70" width="70"> <br>
-				</div>
-				<div id="username">
-					<p> User said: </p>
-				</div>
-				<div id="comment">
-					<p> Very good Restaurant... Hmm yes</p>
-				</div>
-			</div>
-			
 			<div class="userInput" id="form_id">
 				<form name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post">
 					<label id="name"> Review <br>
