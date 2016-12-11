@@ -64,75 +64,54 @@ html, body{
   color: black;
 }
 
-#restaurant{
-	margin: 10px auto;
+.container {
+    width: 100%;
+	height: auto;
+	margin: auto;
 }
 
-#restaurant h1{
-	margin: 10px 70px;
-	font-family: "Franklin Gothic Medium";
-	font-size: 40px;
-	font-style: normal;
-	font-variant: normal;
+.container #data{
+	width: 100%;
+    float: left;
+    height: auto;
 }
 
-#image{
-	width: 50%;
-}
-
-#image img{
-	margin: 20px 50px;
+.container #data img{
+	float: left;
+	margin: 10px 20px;
 	border: 1px solid;
 	border-color: black;
 	border-radius: 25px;
 }
 
-#data h1{
+.container #data #restaurantName{
+	margin: 10px 60px;
 	font-family: "Franklin Gothic Medium";
-	font-size: 30px;
+	font-size: 35px;
 	font-style: normal;
 	font-variant: normal;
 }
 
-#data p{
-	margin: 10px 10px;
-	font-family: "Franklin Gothic";
-	font-weight: none;
+.container #data #information{
+	margin: 20px 60px;
+	font-family: "Franklin Gothic Medium";
 	font-size: 25px;
 	font-style: normal;
 	font-variant: normal;
 }
 
-#comments{
-	position: absolute;
-	margin: -35% auto;
-	left: 35%;
-	border: 1px solid;
-	border-color: black;
-	border-radius: 25px;
-	width: 500px;
-	height: 90px;
-}
-
-#userPic img{
-	position: absolute;
+.container #data p{
 	margin: 10px 10px;
-	border: 1px solid;
-	border-color: black;
-}
-
-#username p{
-	margin: 10px 90px;
-	font-family: "Trebuchet MS";
+	font-family: "Franklin Gothic";
 	font-weight: none;
 	font-size: 20px;
 	font-style: normal;
 	font-variant: normal;
 }
 
-#comment p{
-	margin: 10px 110px;
-	font-family: "Trebuchet MS";
+.container .comment #review{
+	margin-left: 35%;
+	font-family: "Franklin Gothic";
 	font-weight: none;
 	font-size: 15px;
 	font-style: normal;
