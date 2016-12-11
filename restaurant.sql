@@ -22,10 +22,11 @@ CREATE TABLE City(
 
 CREATE TABLE Client(
 	ClientID 		INTEGER PRIMARY KEY,
-	Name 			VARCHAR(255),
+	Name 				VARCHAR(255),
 	Password		VARCHAR(255),
 	Username		VARCHAR(255),
-	Photo 			VARCHAR(255)
+	Photo 			VARCHAR(255),
+	Type				INTEGER
 );
 
 CREATE TABLE Review(
@@ -41,9 +42,9 @@ INSERT INTO Review(ReviewID, ReviewerID, Review, Score, RestaurantID) VALUES (nu
 INSERT INTO Review(ReviewID, ReviewerID, Review, Score, RestaurantID) VALUES (null, 3, 'Melhor Rolo de Carne que já comi!!!!!!', 5, 1);
 
 --Users
-INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'João Silva','7110eda4d09e062aa5e4a390b0a572ac0d2c0220','joao123', 'res/profile-icon.png');
-INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'Pedro Sousa','008bc2b4567f03da2d92d12cbdd5f919e22146de','psousa', 'res/profile-icon.png');
-INSERT INTO Client(ClientID, Name, Password, Username, Photo) VALUES (null, 'Nuno Miguel','af878c86bf240deefd84b07390ea335f1f91ccf5','gamernuno', 'res/profile-icon.png');
+INSERT INTO Client(ClientID, Name, Password, Username, Photo, Type) VALUES (null, 'João Silva','7110eda4d09e062aa5e4a390b0a572ac0d2c0220','joao123', 'res/profile-icon.png',1);
+INSERT INTO Client(ClientID, Name, Password, Username, Photo, Type) VALUES (null, 'Pedro Sousa','008bc2b4567f03da2d92d12cbdd5f919e22146de','psousa', 'res/profile-icon.png',0);
+INSERT INTO Client(ClientID, Name, Password, Username, Photo, Type) VALUES (null, 'Nuno Miguel','af878c86bf240deefd84b07390ea335f1f91ccf5','gamernuno', 'res/profile-icon.png',0);
 
 --Cidades (acrescentar mais?)
 INSERT INTO City(CityID, Name) VALUES (null, 'Porto');

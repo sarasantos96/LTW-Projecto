@@ -15,11 +15,12 @@
 	echo $name;
 	$db = new PDO('sqlite:../restaurant.db');
 
-	$stmt = $db->prepare("INSERT INTO Client(ClientID, Name, Password, Username, Photo)
-	VALUES(null, :nam, :pass, :use, 'res/profile-icon.png')");
+	$stmt = $db->prepare("INSERT INTO Client(ClientID, Name, Password, Username, Photo, Type)
+	VALUES(null, :nam, :pass, :use, 'res/profile-icon.png', :t)");
 	$stmt->bindParam(':nam', $name);
 	$stmt->bindParam(':pass', $hashed_password);
 	$stmt->bindParam(':use', $username);
+	$stmt->bindParam(':t', $owner);
 	$stmt->execute();
 
 	header('Location: ../login.php');
