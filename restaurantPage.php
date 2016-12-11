@@ -5,7 +5,7 @@
 		<title>Foodify - The best places to eat</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="styles/reset.css" >
-		<link rel="stylesheet" href="styles/search.css" >
+		<link rel="stylesheet" href="styles/restaurantPage.css" >
 		<link rel="shortcut icon" href="res/logo.png"/>
 	</head>
 
@@ -26,8 +26,25 @@
 		</div>
 		<div id="restaurant">
 			<?php include_once('database/getRestaurantByID.php'); ?>
-			<p><?=$restData['Name']?></p>
-			<p><?=$restData['Address']?></p>
-			<p><?=$restData['PhoneNumber']?></p>
+			<h1><?=$restData['Name']?></h1>
+			<div id="image">
+				<img id="profimg" src="res/profile-icon" alt = "Foodify" height="400" width="400"> <br>
+			</div>
+			<div id="data">
+				<h1>Information<h1>
+				<p>Address: <?=$restData['Address']?></p>
+				<p>Contact: <?=$restData['PhoneNumber']?></p>
+			</div>
+			<div id="comments">
+				<div id="userPic">
+					<img id="profimg" src="res/profile-icon" alt = "Foodify" height="70" width="70"> <br>
+				</div>
+				<div id="username">
+					<p> User said: </p>
+				</div>
+				<div id="comment">
+					<p> Very good Restaurant... Hmm yes</p>
+				</div>
+			</div>
 		</div>
 	</body>
