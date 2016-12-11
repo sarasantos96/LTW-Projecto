@@ -128,7 +128,7 @@ html{
   top: -170px;
   left: 280px;
   width: 400px;
-  border: 1px solid #AFB0B0;
+  border: 1px solid black;
   border-radius: 3px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#AFB0B0), to(#949494));
 }
@@ -137,6 +137,8 @@ html{
   margin : 20px 20px 20px 10px;
   font-family: "Century Gothic";
 	font-size: 24px;
+  color: #3F5F5B;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
 
 .restaurant{
@@ -147,6 +149,11 @@ html{
 	font-size: 16px;
 }
 
-.restaurant p{
+.restaurant li{
   margin: 5px 5px 5px 5px;
+}
+
+.restaurant a{
+  text-decoration: none;
+  color: black;
 }

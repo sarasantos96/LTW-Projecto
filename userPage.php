@@ -17,7 +17,7 @@
     <div id= "signOptions">
       <ul>
           <li> <a href="foodify.php"> Main Page </a> </li>
-          <li> <a href="database/logout.php"> Log Out </a> <li>
+          <li> <a href="database/logout.php"> Log Out </a> </li>
       </ul>
     </div>
 
@@ -37,12 +37,14 @@
     <div class="myRestaurants">
       <h2> My Restaurants </h2>
       <div class = "restaurant">
+        <ul>
         <?php
-            foreach ($restaurants as $restaurant) {
-              echo  "<p>" . $restaurant['Name'] . "</p>";
-            }
+            foreach ($restaurants as $restaurant) { ?>
+            <li> <a href="restaurantPage.php?id=<?=$restaurant['RestaurantID']?>" > <?php echo $restaurant['Name']; ?> </a> </li>
+        <?php    }
           }
         ?>
+        <ul>
       </div>
     </div>
   </body>
