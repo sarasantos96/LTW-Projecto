@@ -188,3 +188,10 @@ html, body{
   position: relative;
   left: 6.5px;
 }
+
+.usertype{
+  display: inline-block;
+  white-space: nowrap;
+  font-family: Candara;
+  font-size: 18px;
+}

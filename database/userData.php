@@ -49,6 +49,16 @@
     return $result;
   }
 
+  function userType($path){
+    $db = new PDO($path);
+
+    $stmt = $db->prepare('SELECT Type FROM Client WHERE Username = ?');
+    $stmt->execute(array($_SESSION['username']));
+    $result = $stmt->fetch();
+
+    return $result['Type'];
+  }
+
   function setUserFullName($newuserfullname){
     $db = new PDO('sqlite:../restaurant.db');
 
@@ -68,5 +78,12 @@
 
     $stmt = $db->prepare('UPDATE Client SET Password = ? WHERE Username = ?');
     $stmt->execute(array($newpassword,$_SESSION['username']));
+  }
+
+  function setUserType($newUserType){
+    $db = new PDO('sqlite:../restaurant.db');
+
+    $stmt = $db->prepare('UPDATE Client SET Type = ? WHERE Username = ?');
+    $stmt->execute(array($newUserType,$_SESSION['username']));
   }
 ?>
