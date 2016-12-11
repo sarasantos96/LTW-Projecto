@@ -6,7 +6,7 @@
 	<head>
 		<title>Add Restaurant - Fodify</title>
 		<link rel="stylesheet" href="styles/reset.css" >
-		<!--CSS-->
+		<link rel="stylesheet" href="styles/addRestaurantStyle.css" >
 		<link rel="shortcut icon" href="res/logo.png"/>
 		<script type="text/javascript" src="addRestaurant.js"></script>
 	</head>
@@ -21,7 +21,15 @@
 			</ul>
 		</div>
 
-		<div class="userInput">
+
+		<img id="restimg" src ="res/profile-icon.png" alt = "Foodify" height="350" width="450">
+
+		<form class="photoForm" action="database/chooseRestaurantPhoto.php" method="POST" enctype="multipart/form-data">
+		 <input type="file" name="image"  /> <br>
+		 <input id ="submitButton" type="submit"/>
+		</form>
+
+		<div class="formdiv">
 			<form name="info_form" class="edit" action="database/submitNewRestaurant.php" method="post" onSubmit="return submitForm()">
             <label id="name"> Restaurant Name <br>
               <input class="userInput" type="text" name="name" > <br>
@@ -30,16 +38,15 @@
               <input class="userInput" type="text" name="address" > <br>
             </label>
             <label id="phone"> Phone Number <br>
-              <input class="userInput" type="number" name="phone" > <br>
+              <input id = "phone" class="userInput" type="number" name="phone" > <br>
             </label>
-			<label id="city"> City <br>
-              <input class="userInput" type="text" name="city" > <br>
+						<label id="city"> City <br>
+              <input id="city" class="userInput" type="text" name="city" > <br>
             </label>
             <input id = "saveButton" type = "submit" value = "Save">
         </form>
+
+				<p id="warnings"></p>
 		</div>
-
-		<p id="warnings"></p>
-
 	</body>
 </html>

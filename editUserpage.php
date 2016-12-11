@@ -31,10 +31,10 @@
         <form name="edit_form" class="edit" action="database/applyProfileChanges.php" method="post">
             <label id="name"> Name <br>
               <?php $name = userFullName($path); ?>
-              <input class="userInput" type="text" name="name" value= " <?= $name ?> " <br>
+              <input class="userInput" type="text" name="name" value= "<?= $name ?>" <br>
             </label>
             <label id="username"> Username <br>
-              <input class="userInput" type="text" name="username" value = <?= $_SESSION['username'] ?> > <br>
+              <input class="userInput" type="text" name="username" value = "<?= $_SESSION['username'] ?>"> <br>
             </label>
             <label id="password"> Password <br>
               <div id="oldPasswordInput">

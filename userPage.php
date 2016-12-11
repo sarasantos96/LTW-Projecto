@@ -45,8 +45,10 @@
         <ul>
         <?php }else{ ?>
             <p id="message"> You have no Restaurants! </p>
-        <?php } } ?>
+        <?php } ?>
       </div>
+      <button id="addRestButton" onclick="location.href = 'addRestaurant.php'"> Add New Restaurant </button>
     </div>
+    <?php } ?>
   </body>
 </html>
