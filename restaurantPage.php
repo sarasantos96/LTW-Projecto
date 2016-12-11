@@ -5,8 +5,12 @@
 		<title>Foodify - The best places to eat</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="styles/reset.css" >
-		<link rel="stylesheet" href="styles/search.css" >
+		<link rel="stylesheet" href="styles/restaurantPage.css" >
 		<link rel="shortcut icon" href="res/logo.png"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="addReview.js"></script>
+		<script type="text/javascript" src="addReview.js"></script>
+		<link rel="stylesheet" href="styles/addReview.css" >
 	</head>
 
 	<body>
@@ -26,8 +30,43 @@
 		</div>
 		<div id="restaurant">
 			<?php include_once('database/getRestaurantByID.php'); ?>
-			<p><?=$restData['Name']?></p>
-			<p><?=$restData['Address']?></p>
-			<p><?=$restData['PhoneNumber']?></p>
+			<h1><?=$restData['Name']?></h1>
+			<div id="image">
+				<img id="profimg" src="res/profile-icon" alt = "Foodify" height="400" width="400"> <br>
+			</div>
+			<div id="data">
+				<h1>Information<h1>
+				<p>Address: <?=$restData['Address']?></p>
+				<p>Contact: <?=$restData['PhoneNumber']?></p>
+			</div>
+			<div id="comments">
+				<div id="userPic">
+					<img id="profimg" src="res/profile-icon" alt = "Foodify" height="70" width="70"> <br>
+				</div>
+				<div id="username">
+					<p> User said: </p>
+				</div>
+				<div id="comment">
+					<p> Very good Restaurant... Hmm yes</p>
+				</div>
+			</div>
+			
+			<div class="userInput" id="form_id">
+				<form name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post">
+					<label id="name"> Review <br>
+					  <input class="userInput" type="text" name="review" > <br>
+					</label>
+					
+					<div class="rating">
+						<span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
+						<span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+						<span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+						<span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+						<span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+					</div>
+					<input id = "signUpButton" type = "submit" value = "Submit Review" Review">
+				</form>
+			</div>
+			<input id="review_button" type="button" onclick="review_click()" value="Add Review">
 		</div>
 	</body>

@@ -1,0 +1,138 @@
+html, body{
+  background-color: #D7D7D7;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#header{
+	background-color: #699A62;
+	color: black;
+	line-height: 80px;
+}
+
+#headerText{
+	position:relative;
+	margin-left: 130px;
+}
+
+#headerimg{
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	top: 15px;
+	margin-left: 30px;
+}
+
+#mainTitle{
+	font-family: "Century Gothic";
+	font-size: 45px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+
+#slogan{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 40px;
+}
+
+#signOptions{
+  position: absolute;
+  margin-left: 80%;
+  top: 8%;
+}
+
+#signOptions ul{
+	list-style: none;
+	font-family: "Franklin Gothic Medium";
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#signOptions li{
+  padding-right: 20px;
+  display: inline;
+}
+
+#signOptions a{
+  text-decoration: none;
+  color: black;
+}
+
+#restaurant{
+	margin: 10px auto;
+}
+
+#restaurant h1{
+	margin: 10px 70px;
+	font-family: "Franklin Gothic Medium";
+	font-size: 40px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#image img{
+	margin: 20px 50px;
+	border: 1px solid;
+	border-color: black;
+	border-radius: 25px;
+}
+
+#data{
+	margin-top: -30%;
+	margin-left: 30%;
+}
+
+#data h1{
+	font-family: "Franklin Gothic Medium";
+	font-size: 30px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#data p{
+	margin: 10px 10px;
+	font-family: "Franklin Gothic";
+	font-weight: none;
+	font-size: 25px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#comments{
+	margin-top: -15%;
+	margin-left: 35%;
+	border: 1px solid;
+	border-color: black;
+	border-radius: 25px;
+	width: 700px;
+}
+
+#userPic img{
+	margin: 10px 10px;
+	border: 1px solid;
+	border-color: black;
+}
+
+#username p{
+	margin: 10px 10px;
+	font-family: "Trebuchet MS";
+	font-weight: none;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#comment p{
+	margin: 10px 25px;
+	font-family: "Trebuchet MS";
+	font-weight: none;
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+}
