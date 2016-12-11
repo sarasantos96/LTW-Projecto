@@ -48,6 +48,15 @@
                 </label>
               </div>
             </label>
+            <div class="usertype">
+              <?php if(userType($path) == 1){ ?>
+                  <input type="radio" name="usertype" value="owner" checked="checked">Owner
+                  <input type="radio" name="usertype" value="reviewer">Reviewer
+              <?php }else{ ?>
+                  <input type="radio" name="usertype" value="owner">Owner
+                  <input type="radio" name="usertype" value="reviewer" checked="checked">Reviewer
+              <?php } ?>
+            </div>
             <input id = "applyButton" type = "submit" value = "Apply Changes">
         </form>
     </div>

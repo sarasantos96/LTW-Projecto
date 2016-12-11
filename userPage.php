@@ -32,19 +32,20 @@
       $id = userID($path);
       $restaurants = userRestaurants($path, $id);
 
-      if($restaurants != null){
+      if(userType($path) == 1){
     ?>
     <div class="myRestaurants">
       <h2> My Restaurants </h2>
+      <?php if($restaurants != null){ ?>
       <div class = "restaurant">
         <ul>
-        <?php
-            foreach ($restaurants as $restaurant) { ?>
+        <?php foreach ($restaurants as $restaurant) { ?>
             <li> <a href="restaurantPage.php?id=<?=$restaurant['RestaurantID']?>" > <?php echo $restaurant['Name']; ?> </a> </li>
-        <?php    }
-          }
-        ?>
+        <?php } ?>
         <ul>
+        <?php }else{ ?>
+            <p id="message"> You have no Restaurants! </p>
+        <?php } } ?>
       </div>
     </div>
   </body>
