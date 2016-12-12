@@ -7,27 +7,27 @@ function submitForm(){
 	var address_check = true;
 	var phone_check = true;
 	var city_check = true;
-	
+
 	var name = document.forms["info_form"]["name"].value;
 	if (name == "") {
 		name_check = false;
 	}
-	
+
 	var address = document.forms["info_form"]["address"].value;
 	if (address == "") {
 		address_check = false;
 	}
-	
+
 	var phone = document.forms["info_form"]["phone"].value;
 	if (phone == "") {
 		phone_check = false;
 	}
-	
+
 	var city = document.forms["info_form"]["city"].value;
 	if (city == "") {
 		city_check = false;
 	}
-	
+
 	if(!name_check || !address_check || !phone_check || !city_check){
 		var names= [];
 		var warning;
@@ -42,10 +42,10 @@ function submitForm(){
 		
 		warning = buildWarning(names);
 		updateWarning(warning);
-		
+
 		return false
 	}
-	
+
 	if(phone.length != 9){
 		var warning = "Phone number must have 9 digits";
 		updateWarning(warning)
@@ -56,7 +56,7 @@ function submitForm(){
 
 function buildWarning(names){
 	var warning;
-	
+
 	if(names.length == 1){
 		warning = "The " + names[0] + " parameter must be filled";
 	}
@@ -67,7 +67,7 @@ function buildWarning(names){
 		warning = "The " + names[0] + ", " + names[1] + " and " +  names[2] + " parameters must be filled";
 	if(names.length == 4)
 		warning = "The " + names[0] + ", " + names[1] + ", " + names[2] + " and " +  names[3] + " parameters must be filled";
-	
+
 	return warning;
 }
 
@@ -75,12 +75,12 @@ function updateWarning(warning){
 var p = document.createElement("p");
 	var node = document.createTextNode(warning);
 	p.appendChild(node);
-	
+
 	var elem = document.getElementById("warnings");
 	if(elem.childNodes.length == 1){
 		var child = elem.childNodes[0];
 		elem.removeChild(child);
 	}
-	
+
 	elem.appendChild(p);
 }

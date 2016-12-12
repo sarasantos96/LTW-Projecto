@@ -25,7 +25,7 @@ $(document).ready(function(){
 	$('input:radio').change(
 	function(){
 		var userRating = this.value;
-	}); 
+	});
 });
 
 function review_submit(){
@@ -34,7 +34,7 @@ function review_submit(){
 		updateWarning("Select a rating before submiting!")
 		return false;
 	}
-	
+
 	var review = document.forms["review_form"]["review"].value;
 	if(review.length > 140){
 		updateWarning("Reviews cannot have more than 140 characters.")
