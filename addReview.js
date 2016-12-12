@@ -31,7 +31,27 @@ $(document).ready(function(){
 function review_submit(){
 	var rating = document.forms["review_form"]["rating"].value;
 	if(rating == ""){
-		window.onload = null;
+		updateWarning("Select a rating before submiting!")
 		return false;
 	}
+	
+	var review = document.forms["review_form"]["review"].value;
+	if(review.length > 140){
+		updateWarning("Reviews cannot have more than 140 characters.")
+		return false;
+	}
+}
+
+function updateWarning(warning){
+var p = document.createElement("p");
+	var node = document.createTextNode(warning);
+	p.appendChild(node);
+
+	var elem = document.getElementById("warnings");
+	if(elem.childNodes.length == 1){
+		var child = elem.childNodes[0];
+		elem.removeChild(child);
+	}
+
+	elem.appendChild(p);
 }

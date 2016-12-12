@@ -9,7 +9,6 @@
 		<link rel="shortcut icon" href="res/logo.png"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script type="text/javascript" src="addReview.js"></script>
-		<script type="text/javascript" src="addReview.js"></script>
 		<link rel="stylesheet" href="styles/addReview.css" >
 	</head>
 
@@ -46,14 +45,14 @@
 							<div class="comment">
 								<img id="profilePic" src="<?php echo reviewerPic($row['ReviewerID']);?>" alt="Foodify" height="50" width="50">
 								<p id="username"><?php echo reviewerUsername($row['ReviewerID']);?> said: </p>
-								<p id="review"><?=$row['Review']?></p>
+								<p id="review"><h4><?=$row['Score']?>/5</h4><?=$row['Review']?></p>
 							</div>
 						<?php endforeach;
 					endif;
 				?>
 			</div>
 			<div class="userInput" id="form_id">
-				<form name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post">
+				<form name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post" onSubmit="return review_submit()">
 					<label id="name"> Review <br>
 					  <input class="userInput" type="text" name="review" > <br>
 					</label>
@@ -65,9 +64,12 @@
 						<span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
 						<span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
 					</div>
-					<input id = "signUpButton" type = "submit" value = "Submit Review" Review">
+					<input id = "signUpButton" type = "submit" value = "Submit Review">
 				</form>
 			</div>
-			<input id="review_button" type="button" onclick="review_click()" value="Add Review">
+			<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
+				<input id="review_button" type="button" onclick="review_click()" value="Add Review">
+			<?php } ?>
+			<p id="warnings"></p>
 		</div>
 	</body>
