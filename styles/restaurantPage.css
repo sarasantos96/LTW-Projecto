@@ -64,85 +64,95 @@ html, body{
   color: black;
 }
 
-.container {
-    width: 100%;
-	height: auto;
-	margin: auto;
+.comments{
+  position: static;
+  margin-top: -370px;
+  margin-left: 450px;
 }
 
-.container #data{
-	width: 100%;
-    float: left;
-    height: auto;
+#review_button{
+  position: static;
+  margin-left: 500px;
 }
 
-.container #data #restPic{
-	float: left;
-	margin: 10px 20px;
-	border: 1px solid;
-	border-color: black;
-	border-radius: 25px;
+#restPic{
+  position: static;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
-.container #data #restaurantName{
-	margin: 10px 60px;
-	font-family: "Franklin Gothic Medium";
-	font-size: 35px;
+#restaurantName{
+  font-family: "Century Gothic";
+	font-size: 30px;
 	font-style: normal;
 	font-variant: normal;
+	font-weight: 400;
+
+  position: static;
+  margin-top: 20px;
+  margin-left: 30px;
 }
 
-.container #data #information{
-	margin: 20px 60px;
-	font-family: "Franklin Gothic Medium";
-	font-size: 25px;
-	font-style: normal;
-	font-variant: normal;
+.data{
+  position: static;
+  margin-left: 20px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 400px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#AFB0B0), to(#949494));
 }
 
-.container #data p{
-	margin: 10px 10px;
-	font-family: "Franklin Gothic";
-	font-weight: none;
+.data h2{
+  position: static;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Century Gothic";
 	font-size: 20px;
-	font-style: normal;
-	font-variant: normal;
+  font-weight: bold;
 }
 
-.container .comment{
-	background-color: #699A62;
-	margin-top: 10px;
-	margin-left: 30%;
-	border: 1px solid;
-	border-color: black;
-	border-radius: 25px;
-	width: 500px;
-	height: auto;
+.data p{
+  position: static;
+  margin-left: 10px;
+  font-family: "Century Gothic";
+	font-size: 18px;
+  font-weight: 400;
 }
 
-.container .comment #profilePic{
-	float: left;
-	margin-top: 5px;
-	margin-left: 10px;
-	margin-right: 5px;
-	border: 1px solid;
-	border-color: black;
+.comments{
+  position: static;
+  margin-top: -430px;
+  margin-left: 500px;
 }
 
-.container .comment #username{
-	margin-left: 10%;
-	font-family: "Franklin Gothic Medium";
-	font-weight: none;
-	font-size: 20px;
-	font-style: normal;
-	font-variant: normal;
+#reviewsection{
+  font-family: "Century Gothic";
+	font-size: 30px;
+  font-weight: 400;
 }
 
-.container .comment #review{
-	margin-left: 15%;
-	font-family: "Franklin Gothic";
-	font-weight: none;
-	font-size: 15px;
-	font-style: normal;
-	font-variant: normal;
+.comment{
+  position: static;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+}
+
+.comment #username {
+  position: static;
+  margin-top: -45px;
+  margin-left: 60px;
+}
+
+.comment #score{
+  position: static;
+  margin-left: 65px;
+  margin-top: 6px;
+}
+
+.comment #review{
+  position: static;
+  margin-left: 65px;
 }
