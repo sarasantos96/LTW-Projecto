@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/reset.css" >
     <link rel="stylesheet" href="styles/editUserPageStyle.css" />
     <link rel="shortcut icon" href="res/logo.png"/>
+    <script type="text/javascript" src="editUser.js"></script>
   </head>
 
   <body>
@@ -28,7 +29,7 @@
          <input type="file" name="image"  />
          <input id ="submitButton" type="submit"/>
         </form>
-        <form name="edit_form" class="edit" action="database/applyProfileChanges.php" method="post">
+        <form name="edit_form" class="edit" action="database/applyProfileChanges.php" method="post" onSubmit="return submitForm()">
             <label id="name"> Name <br>
               <?php $name = userFullName($path); ?>
               <input class="userInput" type="text" name="name" value= "<?= $name ?>" <br>
@@ -59,6 +60,7 @@
             </div>
             <input id = "applyButton" type = "submit" value = "Apply Changes">
         </form>
+        <p id="warnings"></p>
     </div>
   </body>
 </html>

@@ -79,16 +79,18 @@
 									<h4 id="score"><?=$row['Score']?>/5</h4>
 									<p id="review"><?=$row['Review']?></p>
 								</div>
-								<?php 
-									$replies = reviewReplies($row['ReviewID']); 
+								<?php
+									$replies = reviewReplies($row['ReviewID']);
 									if($replies != NULL):
 										foreach($replies as $reply): ?>
-											<p class="restaurantName"> <?=$restaurantName?> said:</p>
-											<p class="reply"><?=$reply['Reply']?></p>
+											<div class="review">
+												<p class="restaurantName"> <?=$restaurantName?> said:</p>
+												<p class="reply"><?=$reply['Reply']?></p>
+											</div>
 										<?php endforeach;
 									endif;
 								?>
-								
+
 							<?php endforeach;
 						endif;
 					?>

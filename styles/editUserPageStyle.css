@@ -195,3 +195,18 @@ html, body{
   font-family: Candara;
   font-size: 18px;
 }
+
+#warnings p{
+  display: inline;
+  white-space: nowrap;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFBDAF), to(#FFD7CE));
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+  position: fixed;
+  top: 550px;
+  left: 260px;
+  padding: 8px 8px 8px 8px;
+}
