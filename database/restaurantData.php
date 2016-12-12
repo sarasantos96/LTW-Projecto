@@ -49,6 +49,16 @@
 
 		return $result['Photo'];
 	}
+	
+	function reviewReplies($reviewID){
+		$db = new PDO('sqlite:restaurant.db');
+
+		$stmt = $db->prepare('SELECT * FROM Reply WHERE ReviewID = ?');
+		$stmt->execute(array($reviewID));
+		$result = $stmt->fetchAll();
+
+		return $result;
+	}
 
 	function setRestaurantName($id, $name){
 		$db = new PDO('sqlite:../restaurant.db');
