@@ -27,3 +27,11 @@ $(document).ready(function(){
 		var userRating = this.value;
 	}); 
 });
+
+function review_submit(){
+	var rating = document.forms["review_form"]["rating"].value;
+	if(rating == ""){
+		window.onload = null;
+		return false;
+	}
+}
