@@ -1,0 +1,166 @@
+html body{
+  background: #D7D7D7;
+  margin: 0 auto;
+}
+
+body{
+  height: auto;
+
+}
+
+#header{
+	background-color: #699A62;
+	color: black;
+	line-height: 80px;
+}
+
+#headerText{
+  position:relative;
+  margin-left: 130px;
+}
+
+#headerimg{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+	top: 15px;
+	margin-left: 30px;
+}
+
+#mainTitle{
+  font-family: "Century Gothic";
+	font-size: 45px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+
+#slogan{
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 40px;
+}
+
+#signOptions{
+  position: absolute;
+  margin-left: 80%;
+  top: 8%;
+}
+
+#signOptions ul{
+  list-style: none;
+  font-family: "Franklin Gothic Medium";
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#signOptions li{
+  padding-right: 20px;
+  display: inline;
+}
+
+#signOptions a{
+  text-decoration: none;
+  color: black;
+}
+
+.userInput{
+  position: static;
+  margin-top: -370px;
+  margin-left: 460px;
+}
+
+.edit {
+  font-family: Candara;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  padding-top: 5px;
+
+}
+
+.formInput{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Candara;
+  font-size: 18px;
+  height: 25px;
+  width: 300px;
+}
+
+.smallformInput{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Candara;
+  font-size: 18px;
+  height: 25px;
+  width: 100px;
+}
+
+#restfimg{
+  position: static;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.photoForm{
+  position: static;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.photoForm input{
+  margin-top: 3px;
+}
+
+#applyButton{
+  position: static;
+  margin-top: 10px;
+  background-color: #0483a0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#31b2c3), to(#0483a0));
+  background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: -moz-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: -ms-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: -o-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: linear-gradient(top, #31b2c3, #0483a0);
+  border: 1px solid #00748f;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+  color: #fafafa;
+  cursor: pointer;
+  height: 42px;
+  font: 15px Arial, Helvetica;
+  text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
+  width: 130px;
+}
+
+#warnings p{
+  position: relative;
+  margin-top: 15px;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFBDAF), to(#FFD7CE));
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  line-height: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}

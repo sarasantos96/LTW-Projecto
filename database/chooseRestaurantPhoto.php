@@ -16,9 +16,14 @@
 
       if(empty($errors)==true) {
          move_uploaded_file($file_tmp,"../res/".$file_name);
+         $db = new PDO('sqlite:../restaurant.db');
+         $stmt = $db->prepare('UPDATE Restaurant SET Photo = ? WHERE RestaurantID = ?');
+         $stmt->execute(array("res/".$file_name,$_GET['id']));
       }else{
          print_r($errors);
       }
    }
-   header('Location: ../addRestaurant.php');
+   $id = $_GET['id'];
+   $link = "Location: ../editRestaurant.php?id={$id}";
+   header($link);
 ?>
