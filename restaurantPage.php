@@ -69,6 +69,7 @@
 
 					<?php
 						$id = $_GET['id'];
+						$restaurantName = restaurantName($id);
 						$reviews = getReviews($id);
 						if($reviews != NULL):
 							foreach($reviews as $row): ?>
@@ -78,6 +79,16 @@
 									<h4 id="score"><?=$row['Score']?>/5</h4>
 									<p id="review"><?=$row['Review']?></p>
 								</div>
+								<?php 
+									$replies = reviewReplies($row['ReviewID']); 
+									if($replies != NULL):
+										foreach($replies as $reply): ?>
+											<p class="restaurantName"> <?=$restaurantName?> said:</p>
+											<p class="reply"><?=$reply['Reply']?></p>
+										<?php endforeach;
+									endif;
+								?>
+								
 							<?php endforeach;
 						endif;
 					?>

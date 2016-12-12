@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS City;
 DROP TABLE IF EXISTS Client;
 DROP TABLE IF EXISTS Review;
+DROP TABLE IF EXISTS Reply;
 
 CREATE TABLE Restaurant(
 	RestaurantID		INTEGER PRIMARY KEY,
@@ -37,6 +38,17 @@ CREATE TABLE Review(
 	Score			Integer,
 	RestaurantID	INTEGER
 );
+
+CREATE TABLE Reply(
+	ReplyID			INTEGER PRIMARY KEY,
+	ReviewID		INTEGER,
+	Reply			VARCHAR(255)
+);
+
+--Replies
+INSERT INTO Reply(ReplyID, ReviewID, Reply) VALUES (null, 1, 'Obrigado e volte sempre :)');
+INSERT INTO Reply(ReplyID, ReviewID, Reply) VALUES (null, 2, 'A sua satisfação é a nossa melhor recompensa :)');
+INSERT INTO Reply(ReplyID, ReviewID, Reply) VALUES (null, 2, 'Fazemos rolo de carne todas as quitas feiras! Esperamos por si!');
 
 --Reviews
 INSERT INTO Review(ReviewID, ReviewerID, Review, Score, RestaurantID) VALUES (null, 2, 'Muito bom 5/7', 4, 1);
