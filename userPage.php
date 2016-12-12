@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/reset.css" >
     <link rel="stylesheet" href="styles/userPageStyle.css" />
     <link rel="shortcut icon" href="res/logo.png"/>
+	<script type="text/javascript" src="userPage.js"></script>
   </head>
 
   <body>
@@ -41,7 +42,7 @@
         <ul>
         <?php foreach ($restaurants as $restaurant) { ?>
             <li> <a href="restaurantPage.php?id=<?=$restaurant['RestaurantID']?>" > <?php echo $restaurant['Name']; ?> </a>
-              <a href= "editRestaurant.php?id=<?=$restaurant['RestaurantID']?>" > <img  class="delimg" src = "res/delete.png" alt = "delete" height="15" width="15"> </a>
+              <img  class="delimg" src = "res/delete.png" alt = "delete" height="15" width="15" onClick="onClickDelete('<?=$restaurant['RestaurantID']?>')">
               <a href="editRestaurant.php?id=<?=$restaurant['RestaurantID']?>" > <img class="editimg" src = "res/edit.png" alt = "edit" height="15" width="15"> </a>
             </li>
 

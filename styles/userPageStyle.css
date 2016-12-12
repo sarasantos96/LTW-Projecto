@@ -168,6 +168,7 @@ body{
 
 .restaurant li .delimg{
   float: right;
+  cursor:pointer;
 }
 
 .restaurant li .editimg{
