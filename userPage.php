@@ -40,9 +40,14 @@
       <div class = "restaurant">
         <ul>
         <?php foreach ($restaurants as $restaurant) { ?>
-            <li> <a href="restaurantPage.php?id=<?=$restaurant['RestaurantID']?>" > <?php echo $restaurant['Name']; ?> </a> </li>
+            <li> <a href="restaurantPage.php?id=<?=$restaurant['RestaurantID']?>" > <?php echo $restaurant['Name']; ?> </a>
+              <a href= "editRestaurant.php?id=<?=$restaurant['RestaurantID']?>" > <img  class="delimg" src = "res/delete.png" alt = "delete" height="15" width="15"> </a>
+              <a href="editRestaurant.php?id=<?=$restaurant['RestaurantID']?>" > <img class="editimg" src = "res/edit.png" alt = "edit" height="15" width="15"> </a>
+            </li>
+
         <?php } ?>
         <ul>
+
         <?php }else{ ?>
             <p id="message"> You have no Restaurants! </p>
         <?php } ?>

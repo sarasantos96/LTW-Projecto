@@ -31,8 +31,8 @@
 
 	$owner_ID = $db_get_ownerID_result[0];
 
-	$stmt = $db->prepare("INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID)
-						VALUES (null, :nam, :add, :pho, :city, :own);");
+	$stmt = $db->prepare("INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID, Photo)
+						VALUES (null, :nam, :add, :pho, :city, :own, 'res/restaurant-icon.png');");
 	$stmt->bindParam(':nam', $name);
 	$stmt->bindParam(':add', $address);
 	$stmt->bindParam(':pho', $phone);

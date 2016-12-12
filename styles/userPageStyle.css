@@ -158,12 +158,21 @@ body{
 }
 
 .restaurant li{
-  margin: 5px 5px 5px 5px;
+  margin: 8px 8px 8px 8px;
 }
 
 .restaurant a{
   text-decoration: none;
   color: black;
+}
+
+.restaurant li .delimg{
+  float: right;
+}
+
+.restaurant li .editimg{
+  float: right;
+  margin-right: 5px;
 }
 
 #message{

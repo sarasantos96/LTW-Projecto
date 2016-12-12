@@ -21,14 +21,6 @@
 			</ul>
 		</div>
 
-
-		<img id="restimg" src ="res/profile-icon.png" alt = "Foodify" height="350" width="450">
-
-		<form class="photoForm" action="database/chooseRestaurantPhoto.php" method="POST" enctype="multipart/form-data">
-		 <input type="file" name="image"  /> <br>
-		 <input id ="submitButton" type="submit"/>
-		</form>
-
 		<div class="formdiv">
 			<form name="info_form" class="edit" action="database/submitNewRestaurant.php" method="post" onSubmit="return submitForm()">
             <label id="name"> Restaurant Name <br>
