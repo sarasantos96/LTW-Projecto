@@ -2,21 +2,19 @@
 window.addEventListener("load", function(){
 }, true);
 
+var temp_ids = [];
+
 var userRating;
 function codeAddress() {
-	//document.getElementById("form_id").style.display = "none";
 	var reply_forms = document.getElementsByClassName("reply_form_class");
 	for(var i = 0; i < reply_forms.length; i++){
 		reply_forms[i].style.display= "none";
 	}
-	console.log("HEY BAUSS");
 }
 window.onload = codeAddress;
 
 function review_click(){
 	console.log("clicked");
-	//document.getElementById("form_id").style.display = "inline";
-	//document.getElementById("review_button").style.display = "none";
 }
 
 $(document).ready(function(){
@@ -85,9 +83,9 @@ function updateWarning(warning){
 }
 
 function addReply(id){
-	var reply_forms = document.getElementsByClassName("reply_form_class");
-	if(reply_forms[id-1].style.display == "none")
-		reply_forms[id-1].style.display = "inline";
+	var elem = document.getElementById(id);
+	if(elem.style.display == "none")
+		elem.style.display = "inline";
 	else
-		reply_forms[id-1].style.display = "none";
+		elem.style.display = "none";
 }

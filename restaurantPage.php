@@ -117,11 +117,11 @@
 										$user_id = userID("sqlite:restaurant.db");
 										$owner_id = restaurantOwnerID($id);
 										if($user_id == $owner_id){?>
-
+										
 										<a class="add_reply" onclick="addReply(<?=$row['ReviewID']?>)">Reply</a> <br>
 
 
-									<form class="reply_form_class" method="post" action="database/submitNewReply.php?reviewID=<?=$row['ReviewID']?>&id=<?=$id?>" onSubmit="return reply_submit(<?=$row['ReviewID']?>)">
+									<form class="reply_form_class" id="<?=$row['ReviewID']?>" method="post" action="database/submitNewReply.php?reviewID=<?=$row['ReviewID']?>&id=<?=$id?>" onSubmit="return reply_submit(<?=$row['ReviewID']?>)">
 										<input class="reviewInput" type="text" name="reply" > <br>
 										<input id = "replyButton" type = "submit" value = "Submit Reply">
 										<p class="warnings"></p>
