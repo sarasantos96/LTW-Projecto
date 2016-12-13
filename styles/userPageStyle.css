@@ -184,9 +184,9 @@ body{
 }
 
 #addRestButton{
-  position: relative;
-  top: -263px;
-  margin-left: 235px;
+  position: fixed;
+  left: 515px;
+  top: 315px;
   font-family: "Century Gothic";
   font-size: 13px;
   border: 1px solid black ;

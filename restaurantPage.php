@@ -64,7 +64,7 @@
 		<div class="container">
 
 			<h1 id="restaurantName"><?=$restData['Name']?></h1>
-			<img id="restPic" src=<?php echo restaurantPhoto($restData['RestaurantID']); ?> alt="Foodify" height="300" width="400">
+			<img id="restPic" src=<?php echo restaurantPhoto($restData['RestaurantID']); ?> alt="Foodify" height="350" width="450">
 
 			<div class="data">
 				<h2 id="information">Information: </h2>
