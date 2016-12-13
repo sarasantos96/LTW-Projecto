@@ -64,21 +64,10 @@ html, body{
   color: black;
 }
 
-.comments{
-  position: static;
-  margin-top: -370px;
-  margin-left: 450px;
-}
-
-#review_button{
-  position: static;
-  margin-left: 500px;
-}
-
 #restPic{
   position: static;
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-top: 30px;
+  margin-left: 50px;
 }
 
 #restaurantName{
@@ -86,18 +75,18 @@ html, body{
 	font-size: 30px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 400;
+	font-weight: bold;
 
   position: static;
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .data{
   position: static;
-  margin-left: 20px;
-  margin-top: 10px;
-  border: 1px solid #C7C7C7;
+  margin-top: -300px;
+  margin-left: 600px;
+  border: 1px solid black;
   border-radius: 3px;
   width: 400px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#AFB0B0), to(#949494));
@@ -121,27 +110,35 @@ html, body{
   font-weight: 400;
 }
 
+#map{
+  position:static;
+  margin-left: 600px;
+  margin-top: 50px;
+}
+
 .comments{
   position: static;
-  margin-top: -430px;
-  margin-left: 500px;
+  margin-left: 100px;
+  margin-top: 30px;
 }
 
 #reviewsection{
   font-family: "Century Gothic";
 	font-size: 30px;
   font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .comment{
   position: relative;
   margin-bottom: 10px;
-  border: 1px solid #C7C7C7;
+  border: 1px solid black;
   border-radius: 5px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#989999), to(#C9C9C9));
   font-family: "Century Gothic";
 	font-size: 14px;
-  width: 500px;
+  width: 800px;
   height: auto;
 }
 
@@ -169,11 +166,9 @@ html, body{
 }
 
 #review_button{
-  position: static;
-  margin-left: 10px;
   margin-top: 10px;
-  margin-bottom: 10px;
-
+  margin-bottom: 20px;
+  text-align: center;
   background-color: #0483a0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#31b2c3), to(#0483a0));
   background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
@@ -193,7 +188,6 @@ html, body{
   height: 42px;
   font: 15px Arial, Helvetica;
   text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
-  width: 100px;
 }
 
 .userInput{
@@ -201,22 +195,77 @@ html, body{
   margin-bottom: 10px;
 }
 
-.review{
+.restaurantreply{
   position: static;
-  margin-left: 80px;
+  margin-top: 5px;
+  margin-left: 50px;
   margin-bottom: 10px;
-  border: 1px solid #C7C7C7;
-  width: 420px;
+  width: 750px;
+  border: 1px solid black;
   border-radius: 5px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#CBCBCB), to(#C9C9C9));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#C5C5C5), to(#C9C9C9));
 }
 
-.review p{
-  margin: 5px 5px 5px 8px;
+.restaurantreply p{
   font-family: "Century Gothic";
 	font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
 }
 
-.review .restaurantName{
+.restaurantreply .restaurantName{
   font-weight: bold;
+}
+
+.restaurantreply .reply{
+  margin-left: 8px;
+}
+
+.add_reply {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.reply_form_class{
+  font-family: "Century Gothic";
+  font-size: 14px;
+  position: static;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.replyInput{
+  width: 300px;
+  height: 50px;
+}
+
+#replyButton{
+  position: static;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#submitButton{
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.reviewInput{
+  width: 300px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+#warnings{
+  margin-top: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #953939;
 }
