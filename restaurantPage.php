@@ -10,6 +10,35 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script type="text/javascript" src="addReview.js"></script>
 		<link rel="stylesheet" href="styles/addReview.css" >
+		
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
+		
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
+		<script>
+			$( function() {
+				var dialog, form,
+				
+				dialog = $( "#review_form_div" ).dialog({
+					autoOpen: false,
+					height: 400,
+					width: 350,
+					modal: true,
+					close: function() {
+						form[ 0 ].reset();
+					}
+				});
+			 
+				form = dialog.find( "#review_form" ).on( "submit", function( event ) {
+				});
+			 
+				$( "#review_button" ).button().on( "click", function() {
+				  dialog.dialog( "open" );
+				});
+			} );
+		</script>
 	</head>
 
 	<body>
@@ -46,8 +75,8 @@
 			<div class="comments">
 				<h2 id="reviewsection"> Review Section </h2>
 
-				<div class="userInput" id="form_id">
-					<form name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post" onSubmit="return review_submit()">
+				<div class="userInput" id="review_form_div">
+					<form id="review_form" name="review_form" class="edit" action="database/submitReview.php?id=<?php echo$_GET["id"]?>" method="post" onSubmit="return review_submit()">
 						<label id="name"> Review <br>
 							<input class="userInput" type="text" name="review" > <br>
 						</label>
@@ -61,11 +90,12 @@
 						</div>
 						<input id = "signUpButton" type = "submit" value = "Submit Review">
 					</form>
+					<p id="warnings"></p>
 				</div>
 				<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
 					<input id="review_button" type="button" onclick="review_click()" value="Add Review">
 				<?php } ?>
-				<p id="warnings"></p>
+				
 
 					<?php
 						$id = $_GET['id'];
@@ -78,6 +108,11 @@
 									<p id="username"><?php echo reviewerUsername($row['ReviewerID']);?> said: </p>
 									<h4 id="score"><?=$row['Score']?>/5</h4>
 									<p id="review"><?=$row['Review']?></p>
+									<a class="add_reply" onclick="addReply(<?=$row['ReviewID']?>)">Reply</a>
+									<form class="reply_form_class" method="post" action="database/submitNewReply.php?reviewID=<?=$row['ReviewID']?>&id=<?=$id?>">
+										<input class="userInput" type="text" name="reply" > <br>
+										<input id = "replyButton" type = "submit" value = "Submit Reply">
+									</form>
 								</div>
 								<?php
 									$replies = reviewReplies($row['ReviewID']);

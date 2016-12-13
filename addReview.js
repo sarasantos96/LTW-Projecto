@@ -4,14 +4,19 @@ window.addEventListener("load", function(){
 
 var userRating;
 function codeAddress() {
-	document.getElementById("form_id").style.display = "none";
+	//document.getElementById("form_id").style.display = "none";
+	var reply_forms = document.getElementsByClassName("reply_form_class");
+	for(var i = 0; i < reply_forms.length; i++){
+		reply_forms[i].style.display= "none";
+	}
+	console.log("HEY BAUSS");
 }
 window.onload = codeAddress;
 
 function review_click(){
 	console.log("clicked");
-	document.getElementById("form_id").style.display = "inline";
-	document.getElementById("review_button").style.display = "none";
+	//document.getElementById("form_id").style.display = "inline";
+	//document.getElementById("review_button").style.display = "none";
 }
 
 $(document).ready(function(){
@@ -54,4 +59,12 @@ var p = document.createElement("p");
 	}
 
 	elem.appendChild(p);
+}
+
+function addReply(id){
+	var reply_forms = document.getElementsByClassName("reply_form_class");
+	if(reply_forms[id-1].style.display == "none")
+		reply_forms[id-1].style.display = "inline";
+	else
+		reply_forms[id-1].style.display = "none";
 }

@@ -4,6 +4,8 @@
 	$reply = $_POST['reply'];
 	$ResID = $_GET['id'];
 	
+	$db = new PDO('sqlite:../restaurant.db');
+	
 	$stmt = $db->prepare("INSERT INTO Reply(ReplyID, ReviewID, Reply) VALUES (null, :rev, :rep)");
 	$stmt->bindParam(':rev', $reviewID);
 	$stmt->bindParam(':rep', $reply);
