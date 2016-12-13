@@ -13,6 +13,8 @@
 
 	$reviewer_ID = $db_get_reviewerID_result[0];
 	
+	if($review == "")
+		$review ="No writen review";
 	
 	$stmt = $db->prepare("INSERT INTO Review(ReviewID, ReviewerID, Review, Score, RestaurantID) VALUES (null, :rev, :tex, :sco, :res)");
 	$stmt->bindParam(':rev', $reviewer_ID);
