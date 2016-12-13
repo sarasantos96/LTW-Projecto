@@ -59,6 +59,16 @@
 
 		return $result;
 	}
+	
+	function restaurantOwnerID($id){
+		$db = new PDO('sqlite:restaurant.db');
+
+		$stmt = $db->prepare('SELECT OwnerID FROM Restaurant WHERE RestaurantID = ?');
+		$stmt->execute(array($id));
+		$result = $stmt->fetch();
+
+		return $result['OwnerID'];
+	}
 
 	function setRestaurantName($id, $name){
 		$db = new PDO('sqlite:../restaurant.db');
