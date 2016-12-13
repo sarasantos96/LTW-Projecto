@@ -8,13 +8,13 @@ DROP TABLE IF EXISTS Review;
 DROP TABLE IF EXISTS Reply;
 
 CREATE TABLE Restaurant(
-	RestaurantID		INTEGER PRIMARY KEY,
+	RestaurantID	INTEGER PRIMARY KEY,
 	Name 			VARCHAR(255),
 	Address 		VARCHAR(255),
 	PhoneNumber		VARCHAR(255),
 	CityID 			INTEGER,
 	OwnerID			INTEGER,
-	Photo				VARCHAR(255)
+	Photo			VARCHAR(255)
 );
 
 CREATE TABLE City(
@@ -24,11 +24,11 @@ CREATE TABLE City(
 
 CREATE TABLE Client(
 	ClientID 		INTEGER PRIMARY KEY,
-	Name 				VARCHAR(255),
+	Name 			VARCHAR(255),
 	Password		VARCHAR(255),
 	Username		VARCHAR(255),
 	Photo 			VARCHAR(255),
-	Type				INTEGER
+	Type			INTEGER
 );
 
 CREATE TABLE Review(
@@ -69,33 +69,33 @@ INSERT INTO City(CityID, Name) VALUES (null, 'Faro');
 --Restaurantes (ver www.pai.pt)
 --Porto ID 1
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Filha da Mãe Preta', 'Cais Ribeira 39/40', 222086066, 1, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Filha da Mãe Preta', 'Cais Ribeira 39/40', 222086066, 1, 1, 'res/filha_da_mae_preta.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Manuel Alves', 'Avenida Fernão Magalhães 782', 225371627, 1, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Manuel Alves', 'Avenida Fernão Magalhães 782', 225371627, 1, 1, 'res/manuel_alves.gif');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Abadia do Porto', 'Rua Ateneu C Porto 22/4', 222008757, 1, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Abadia do Porto', 'Rua Ateneu C Porto 22/4', 222008757, 1, 1, 'res/abadia.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'O Pátio', 'Rua Santa Catarina 312', 222034028, 1, 1, 'res/restaurant-icon.png');
+VALUES (null, 'O Pátio', 'Rua Santa Catarina 312', 222034028, 1, 1, 'res/pátio.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Novo Paris', 'Travessa Congregados 19', 220424334, 1, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Novo Paris', 'Travessa Congregados 19', 220424334, 1, 1, 'res/novo_paris.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'ÉLeBê', 'Rua St Ildefonso 118/120', 222032455, 1, 1, 'res/restaurant-icon.png');
+VALUES (null, 'ÉLeBê', 'Rua St Ildefonso 118/120', 222032455, 1, 1, 'res/elebe.png');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Churrasqueira Papagaio', 'Travessa Carmo 30-A', 220403568, 1, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Churrasqueira Papagaio', 'Travessa Carmo 30-A', 220403568, 1, 1, 'res/papagaio.png');
 
 --Braga ID 2
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'A Paragem', 'Portela', 253662771, 2, 1, 'res/restaurant-icon.png');
+VALUES (null, 'A Paragem', 'Portela', 253662771, 2, 1, 'res/a_paragem.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'São Frutuoso', 'Rua Costa Gomes 168', 253623372, 2, 1, 'res/restaurant-icon.png');
+VALUES (null, 'São Frutuoso', 'Rua Costa Gomes 168', 253623372, 2, 1, 'res/sao_frutuoso.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Terminal Coimbra', 'Rua José F S Azevedo 57 r/c', 253141243, 2, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Terminal Coimbra', 'Rua José F S Azevedo 57 r/c', 253141243, 2, 1, 'res/terminal-de-coimbra.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Delicatum', 'Travessa Taxa 2', 253619584, 2, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Delicatum', 'Travessa Taxa 2', 253619584, 2, 1, 'res/delicatum.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Filhos de Moura', 'Rua Fervenças 66', 253433145, 2, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Filhos de Moura', 'Rua Fervenças 66', 253433145, 2, 1, 'res/filhos-de-moura.jpg');
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
-VALUES (null, 'Cosy Sushi Bar', 'Avenida Robert Smith 38', 253141053, 2, 1, 'res/restaurant-icon.png');
+VALUES (null, 'Cosy Sushi Bar', 'Avenida Robert Smith 38', 253141053, 2, 1, 'res/cosy.png');
 
 --Lisboa ID 3
 INSERT INTO Restaurant(RestaurantID, Name, Address, PhoneNumber, CityID, OwnerID,Photo)
