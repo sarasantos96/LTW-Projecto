@@ -51,13 +51,13 @@
 		<div id= "signOptions">
 			<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
 			<ul>
-			   <li> <a href="userPage.php"> Hello <?= $_SESSION['username'] ?> </a> </li>
+			   <li> <a href="userPage.php"> Hello, <?= $_SESSION['username'] ?> </a> </li>
 			   <li> <a href="database/logout.php"> Log Out </a> </li>
 			</ul>
 		  <?php } else { ?>
 			<ul>
 				  <li> <a href="login.php"> Log In </a> </li>
-				  <li> <a href="signup.php"> Sign Up </a> <li>
+				  <li> <a href="signup.php"> Sign Up </a> </li>
 			</ul>
 		  <?php } ?>
 		</div>
@@ -117,15 +117,15 @@
 										$user_id = userID("sqlite:restaurant.db");
 										$owner_id = restaurantOwnerID($id);
 										if($user_id == $owner_id){?>
-										
+
 										<a class="add_reply" onclick="addReply(<?=$row['ReviewID']?>)">Reply</a> <br>
-									
-									
+
+
 									<form class="reply_form_class" method="post" action="database/submitNewReply.php?reviewID=<?=$row['ReviewID']?>&id=<?=$id?>" onSubmit="return reply_submit(<?=$row['ReviewID']?>)">
-										<input class="userInput" type="text" name="reply" > <br>
+										<input class="reviewInput" type="text" name="reply" > <br>
 										<input id = "replyButton" type = "submit" value = "Submit Reply">
+										<p class="warnings"></p>
 									</form>
-									<p class="warnings"></p>
 									<?php } ?>
 									</div>
 								<?php

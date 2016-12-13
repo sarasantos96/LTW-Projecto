@@ -259,12 +259,21 @@ html, body{
   width: 300px;
   height: 40px;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 #warnings{
   margin-top: 30px;
   text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #953939;
+}
+
+.warnings{
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
   font-weight: bold;
   font-size: 16px;
   color: #953939;
