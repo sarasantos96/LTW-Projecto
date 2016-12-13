@@ -14,7 +14,7 @@
 		<div id= "signOptions">
 			<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
 				<ul>
-				   <li> <a href="userPage.php"> Hello <?= $_SESSION['username'] ?> </a> </li>
+				   <li> <a href="userPage.php"> Hello, <?= $_SESSION['username'] ?> </a> </li>
 				   <li> <a href="database/logout.php"> Log Out </a> </li>
 				</ul>
 			<?php } else { ?>

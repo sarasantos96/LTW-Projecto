@@ -97,7 +97,7 @@ html, body{
   position: static;
   margin-left: 20px;
   margin-top: 10px;
-  border: 1px solid black;
+  border: 1px solid #C7C7C7;
   border-radius: 3px;
   width: 400px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#AFB0B0), to(#949494));
@@ -136,7 +136,7 @@ html, body{
 .comment{
   position: relative;
   margin-bottom: 10px;
-  border: 1px solid black;
+  border: 1px solid #C7C7C7;
   border-radius: 5px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#989999), to(#C9C9C9));
   font-family: "Century Gothic";
@@ -205,9 +205,8 @@ html, body{
   position: static;
   margin-left: 80px;
   margin-bottom: 10px;
-  border: 1px solid black;
+  border: 1px solid #C7C7C7;
   width: 420px;
-  border: 1px solid black;
   border-radius: 5px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#CBCBCB), to(#C9C9C9));
 }

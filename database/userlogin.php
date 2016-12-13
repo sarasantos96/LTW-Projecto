@@ -13,6 +13,7 @@
 
 	if($result){
 		$_SESSION['username'] = $username;
+		$_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(16));
 		header('Location: ../foodify.php');
 	}
 	else{

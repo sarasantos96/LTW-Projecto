@@ -17,7 +17,7 @@
 		<div id= "signOptions">
 			<ul>
 				<li> <a href="foodify.php"> Main Page </a> </li>
-				<li> <a href="logout.php"> Log Out </a> <li>
+				<li> <a href="database/logout.php"> Log Out </a> </li>
 			</ul>
 		</div>
 

@@ -19,8 +19,7 @@ function submitForm(){
 
 	var newpass = document.forms["edit_form"]["newpassword"].value;
   var oldpass = document.forms["edit_form"]["oldpassword"].value;
-	if (oldpass != "") {
-    if(newpass == "")
+	if ((oldpass != "" && newpass == "") || (oldpass == "" && newpass != "")) {
 		  newpassword_check = false;
 	}
 
@@ -32,7 +31,7 @@ function submitForm(){
 		if(!username_check)
 			names.push("username");
 		if(!newpassword_check)
-			names.push("new password");
+			names.push("all password");
 
 		warning = buildWarning(names);
 		updateWarning(warning);
