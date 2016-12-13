@@ -37,7 +37,7 @@
 						<h2> <?=$count?>. <?=$row['ResName']?></h2>
 						<?php $count = $count + 1; ?>
 						<p> Address: <?=$row['Address']?></br>Contact: <?=$row['PhoneNumber']?></p></br>
-						<button class="button" type="button" onclick="location.href = 'restaurantPage.php?id=<?=$row['RestaurantID']?>'">Go to page</button>
+						<a class="button" href= "restaurantPage.php?id=<?=$row['RestaurantID']?>"> Visit Restaurant page </a>
 					</div>
 				<?php endforeach; ?>
 			<?php endif ?>
