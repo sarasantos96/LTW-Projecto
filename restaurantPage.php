@@ -46,6 +46,7 @@
 		<?php include_once('database/getRestaurantByID.php'); ?>
 		<?php include_once('database/reviewData.php'); ?>
 		<?php include_once('database/restaurantData.php'); ?>
+		<?php include_once('database/userData.php'); ?>
 
 		<div id= "signOptions">
 			<?php if(isset($_SESSION['username']) && $_SESSION['username'] != null) { ?>
@@ -112,12 +113,21 @@
 									<p id="username"><?php echo reviewerUsername($row['ReviewerID']);?> said: </p>
 									<h4 id="score"><?=$row['Score']?>/5</h4>
 									<p id="review"><?=$row['Review']?></p>
-									<a class="add_reply" onclick="addReply(<?=$row['ReviewID']?>)">Reply</a> <br>
-									<form class="reply_form_class" method="post" action="database/submitNewReply.php?reviewID=<?=$row['ReviewID']?>&id=<?=$id?>">
-										<input class="replyInput" type="text" name="reply" > <br>
+									<?php
+										$user_id = userID("sqlite:restaurant.db");
+										$owner_id = restaurantOwnerID($id);
+										if($user_id == $owner_id){?>
+										
+										<a class="add_reply" onclick="addReply(<?=$row['ReviewID']?>)">Reply</a> <br>
+									
+									
+									<form class="reply_form_class" method="post" action="database/submitNewReply.php?reviewID=<?=$row['ReviewID']?>&id=<?=$id?>" onSubmit="return reply_submit(<?=$row['ReviewID']?>)">
+										<input class="userInput" type="text" name="reply" > <br>
 										<input id = "replyButton" type = "submit" value = "Submit Reply">
 									</form>
-								</div>
+									<p class="warnings"></p>
+									<?php } ?>
+									</div>
 								<?php
 									$replies = reviewReplies($row['ReviewID']);
 									if($replies != NULL):
